@@ -102,8 +102,7 @@ public final class JDiaLog_DatPhong extends javax.swing.JFrame {
         lb_control.setPreferredSize(new java.awt.Dimension(335, 40));
         lb_control.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_back.setBackground(new java.awt.Color(255, 255, 255));
-        btn_back.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btn_back.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btn_back.setText("Quay Lại");
         btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,8 +111,7 @@ public final class JDiaLog_DatPhong extends javax.swing.JFrame {
         });
         lb_control.add(btn_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, -1));
 
-        btn_conf.setBackground(new java.awt.Color(255, 255, 255));
-        btn_conf.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btn_conf.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btn_conf.setText("Đặt Phòng");
         btn_conf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

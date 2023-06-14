@@ -174,13 +174,13 @@ public class JP_KhachHang extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel2.setText("Mã Khách Hàng:");
 
-        txtmakh.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtmakh.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtmakh.setMargin(new java.awt.Insets(0, 2, 0, 0));
 
         jLabel3.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel3.setText("Tên Khách Hàng: ");
 
-        txttenkh.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txttenkh.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txttenkh.setMargin(new java.awt.Insets(0, 2, 0, 0));
         txttenkh.setMinimumSize(new java.awt.Dimension(7, 25));
         txttenkh.addActionListener(new java.awt.event.ActionListener() {
@@ -192,7 +192,7 @@ public class JP_KhachHang extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel4.setText("Địa Chỉ:");
 
-        txtdiachi.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtdiachi.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtdiachi.setMargin(new java.awt.Insets(0, 2, 0, 0));
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
@@ -201,13 +201,13 @@ public class JP_KhachHang extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel6.setText("CMND/CCCD:");
 
-        txtcmnd.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtcmnd.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtcmnd.setMargin(new java.awt.Insets(0, 2, 0, 0));
 
         jLabel7.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel7.setText("SĐT:");
 
-        txtsdt.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtsdt.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtsdt.setMargin(new java.awt.Insets(0, 2, 0, 0));
 
         rdb_Nam.setBackground(new java.awt.Color(255, 255, 255));
@@ -295,8 +295,7 @@ public class JP_KhachHang extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cập Nhật ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 11))); // NOI18N
 
-        bt_them.setBackground(new java.awt.Color(255, 255, 255));
-        bt_them.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_them.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_them.setText("Thêm ");
         bt_them.setMaximumSize(new java.awt.Dimension(85, 25));
         bt_them.setMinimumSize(new java.awt.Dimension(85, 25));
@@ -307,8 +306,7 @@ public class JP_KhachHang extends javax.swing.JPanel {
             }
         });
 
-        bt_sua.setBackground(new java.awt.Color(255, 255, 255));
-        bt_sua.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_sua.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_sua.setText("Sửa ");
         bt_sua.setMaximumSize(new java.awt.Dimension(85, 25));
         bt_sua.setMinimumSize(new java.awt.Dimension(85, 25));
@@ -319,8 +317,7 @@ public class JP_KhachHang extends javax.swing.JPanel {
             }
         });
 
-        bt_xoa.setBackground(new java.awt.Color(255, 255, 255));
-        bt_xoa.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_xoa.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_xoa.setText("Xóa ");
         bt_xoa.setMaximumSize(new java.awt.Dimension(55, 25));
         bt_xoa.setMinimumSize(new java.awt.Dimension(55, 25));
@@ -338,11 +335,10 @@ public class JP_KhachHang extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bt_them, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
                 .addComponent(bt_sua, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bt_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(49, 49, 49)
+                .addComponent(bt_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,8 +354,7 @@ public class JP_KhachHang extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Điều Khiển", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 11))); // NOI18N
 
-        bt_ghi.setBackground(new java.awt.Color(255, 255, 255));
-        bt_ghi.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_ghi.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_ghi.setText("Ghi");
         bt_ghi.setMaximumSize(new java.awt.Dimension(85, 25));
         bt_ghi.setMinimumSize(new java.awt.Dimension(85, 25));
@@ -370,8 +365,7 @@ public class JP_KhachHang extends javax.swing.JPanel {
             }
         });
 
-        bt_khong.setBackground(new java.awt.Color(255, 255, 255));
-        bt_khong.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_khong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_khong.setText("Không");
         bt_khong.setMaximumSize(new java.awt.Dimension(85, 25));
         bt_khong.setMinimumSize(new java.awt.Dimension(85, 25));
@@ -461,15 +455,11 @@ public class JP_KhachHang extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tb_KhachHang);
         if (tb_KhachHang.getColumnModel().getColumnCount() > 0) {
-            tb_KhachHang.getColumnModel().getColumn(0).setPreferredWidth(35);
             tb_KhachHang.getColumnModel().getColumn(0).setCellRenderer(center);
-            tb_KhachHang.getColumnModel().getColumn(1).setPreferredWidth(125);
-            tb_KhachHang.getColumnModel().getColumn(2).setPreferredWidth(50);
-            tb_KhachHang.getColumnModel().getColumn(3).setPreferredWidth(35);
+            tb_KhachHang.getColumnModel().getColumn(1).setCellRenderer(null);
+            tb_KhachHang.getColumnModel().getColumn(2).setCellRenderer(null);
             tb_KhachHang.getColumnModel().getColumn(3).setCellRenderer(center);
-            tb_KhachHang.getColumnModel().getColumn(4).setPreferredWidth(50);
             tb_KhachHang.getColumnModel().getColumn(4).setCellRenderer(center);
-            tb_KhachHang.getColumnModel().getColumn(5).setPreferredWidth(50);
             tb_KhachHang.getColumnModel().getColumn(5).setCellRenderer(center);
         }
 

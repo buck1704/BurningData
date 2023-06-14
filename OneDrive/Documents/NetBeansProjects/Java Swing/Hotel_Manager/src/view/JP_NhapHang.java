@@ -229,12 +229,12 @@ public class JP_NhapHang extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel10.setText("Mã nhập:");
 
-        txtmanhap.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtmanhap.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel2.setText("Mã sản phẩm:");
 
-        txtmasp.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtmasp.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtmasp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtmaspKeyReleased(evt);
@@ -246,7 +246,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
         jLabel4.setPreferredSize(new java.awt.Dimension(75, 14));
         jLabel4.setRequestFocusEnabled(false);
 
-        txtncc.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtncc.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtncc.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtnccKeyReleased(evt);
@@ -256,12 +256,12 @@ public class JP_NhapHang extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel8.setText("Loại Hàng:");
 
-        txtloaihang.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtloaihang.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel5.setText("Số lượng:");
 
-        txtsoluong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtsoluong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel6.setText("Đơn vị tính:");
@@ -273,12 +273,12 @@ public class JP_NhapHang extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel7.setText("Giá Nhập:");
 
-        txtgianhap.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txtgianhap.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel9.setText("Ngày Nhập");
 
-        txtngaynhap.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
+        txtngaynhap.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         txtngaynhap.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -355,8 +355,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
 
         txttimkiem.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
-        bttimkiem.setBackground(new java.awt.Color(255, 255, 255));
-        bttimkiem.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bttimkiem.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bttimkiem.setText("Chọn");
         bttimkiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -397,8 +396,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cập nhập"));
         jPanel1.setPreferredSize(new java.awt.Dimension(332, 60));
 
-        btnhaphang.setBackground(new java.awt.Color(255, 255, 255));
-        btnhaphang.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btnhaphang.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btnhaphang.setText("Nhập Hàng");
         btnhaphang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -406,8 +404,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
             }
         });
 
-        btsua.setBackground(new java.awt.Color(255, 255, 255));
-        btsua.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btsua.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btsua.setText("Sửa");
         btsua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -415,8 +412,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
             }
         });
 
-        btxoa.setBackground(new java.awt.Color(255, 255, 255));
-        btxoa.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btxoa.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btxoa.setText("Xóa");
         btxoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -432,7 +428,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnhaphang)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btsua, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                .addComponent(btsua, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btxoa, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -453,8 +449,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Điều Khiển"));
         jPanel3.setPreferredSize(new java.awt.Dimension(332, 60));
 
-        btghi.setBackground(new java.awt.Color(255, 255, 255));
-        btghi.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btghi.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btghi.setText("Ghi");
         btghi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -462,8 +457,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
             }
         });
 
-        btkhong.setBackground(new java.awt.Color(255, 255, 255));
-        btkhong.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btkhong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btkhong.setText("Không");
         btkhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -471,8 +465,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         jButton2.setText("Làm mới");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -486,7 +479,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btghi, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(btghi, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btkhong, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

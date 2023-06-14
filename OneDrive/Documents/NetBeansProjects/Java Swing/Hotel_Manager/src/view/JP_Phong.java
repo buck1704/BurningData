@@ -174,7 +174,7 @@ public final class JP_Phong extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel2.setText("Mã Phòng:");
 
-        txt_maphong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txt_maphong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txt_maphong.setMargin(new java.awt.Insets(0, 2, 0, 0));
         txt_maphong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,17 +192,17 @@ public final class JP_Phong extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel9.setText("Số Giường:");
 
-        txt_sogiuong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txt_sogiuong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel10.setText("Số Phòng:");
 
-        txt_sophong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txt_sophong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel5.setText("Giá Phòng:");
 
-        txt_giaphong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txt_giaphong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel7.setText("Tình Trạng:");
@@ -241,9 +241,9 @@ public final class JP_Phong extends javax.swing.JPanel {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdb_Full, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rdb_Full, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rdb_Empty, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rdb_Empty))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                             .addComponent(txt_giaphong)
                             .addComponent(txt_sophong, javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,8 +299,7 @@ public final class JP_Phong extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Cập Nhật"), "Cập Nhật", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 11))); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(360, 61));
 
-        bt_them.setBackground(new java.awt.Color(255, 255, 255));
-        bt_them.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_them.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_them.setText("Thêm");
         bt_them.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,8 +307,7 @@ public final class JP_Phong extends javax.swing.JPanel {
             }
         });
 
-        bt_sua.setBackground(new java.awt.Color(255, 255, 255));
-        bt_sua.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_sua.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_sua.setText("Sửa");
         bt_sua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -317,8 +315,7 @@ public final class JP_Phong extends javax.swing.JPanel {
             }
         });
 
-        bt_xoa.setBackground(new java.awt.Color(255, 255, 255));
-        bt_xoa.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_xoa.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_xoa.setText("Xoá");
         bt_xoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -355,8 +352,7 @@ public final class JP_Phong extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Điều Khiển", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 11))); // NOI18N
         jPanel3.setPreferredSize(new java.awt.Dimension(360, 60));
 
-        bt_ghi.setBackground(new java.awt.Color(255, 255, 255));
-        bt_ghi.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_ghi.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_ghi.setText("Ghi");
         bt_ghi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -364,8 +360,7 @@ public final class JP_Phong extends javax.swing.JPanel {
             }
         });
 
-        bt_khong.setBackground(new java.awt.Color(255, 255, 255));
-        bt_khong.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_khong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_khong.setText("Không");
         bt_khong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -32,6 +32,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
         initComponents();
         Buoc2_LayNguonDV();
         Buoc2_LayNguonSP();
+
     }
 
     public void Buoc2_LayNguonDV() throws IOException {
@@ -137,6 +138,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         lb_b2_giasp = new javax.swing.JLabel();
         btn_b2_themsp = new javax.swing.JButton();
+        btn_hoanthanh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -262,7 +264,6 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
 
         button1.setText("Hoàn Thành");
         button1.setBorderColor(new java.awt.Color(0, 0, 255));
-        button1.setFont(new java.awt.Font("Monterrat", 1, 13)); // NOI18N
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
@@ -294,7 +295,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
                                     .addComponent(lb_b2_tongphieudv, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18))))
         );
         jPanel7Layout.setVerticalGroup(
@@ -476,8 +477,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
         lb_b2_giadv.setFont(new java.awt.Font("Montserrat Medium", 3, 16)); // NOI18N
         lb_b2_giadv.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
-        btn_b2_themdv.setBackground(new java.awt.Color(255, 255, 255));
-        btn_b2_themdv.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btn_b2_themdv.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btn_b2_themdv.setText("Thêm");
         btn_b2_themdv.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -662,8 +662,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
         lb_b2_giasp.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_b2_giasp.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
-        btn_b2_themsp.setBackground(new java.awt.Color(255, 255, 255));
-        btn_b2_themsp.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        btn_b2_themsp.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         btn_b2_themsp.setText("Thêm");
         btn_b2_themsp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -673,6 +672,13 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
         btn_b2_themsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_b2_themspActionPerformed(evt);
+            }
+        });
+
+        btn_hoanthanh.setText("Hoàn Thành");
+        btn_hoanthanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hoanthanhActionPerformed(evt);
             }
         });
 
@@ -715,6 +721,10 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btn_b2_themsp)))
                 .addContainerGap())
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(btn_hoanthanh)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -746,7 +756,9 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
                     .addComponent(lb_b2_giasp, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_b2_themsp)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(btn_hoanthanh)
+                .addGap(69, 69, 69))
         );
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 290, 350));
@@ -776,10 +788,6 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
     }//GEN-LAST:event_tb_sanphamMouseClicked
 
     private void btn_b2_themdvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_b2_themdvMouseClicked
-    
-    }//GEN-LAST:event_btn_b2_themdvMouseClicked
-
-    private void btn_b2_themdvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_b2_themdvActionPerformed
         tbl_ChotDichVu = (DefaultTableModel) tb_chotdichvu.getModel();
         b2_madv = lb_b2_madv.getText();
         b2_tendv = lb_b2_tendv.getText();
@@ -800,6 +808,10 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
             tbl_ChotDichVu.addRow(row);
             TinhTongGia(tbl_ChotDichVu, lb_b2_tonggiadv);
         }
+    }//GEN-LAST:event_btn_b2_themdvMouseClicked
+
+    private void btn_b2_themdvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_b2_themdvActionPerformed
+        // TODO add your handling code here:
     }//GEN-LAST:event_btn_b2_themdvActionPerformed
 
     private void txt_b2_soluongspFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_b2_soluongspFocusLost
@@ -848,10 +860,6 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_giamsoluongMouseClicked
 
     private void btn_b2_themspMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_b2_themspMouseClicked
-        
-    }//GEN-LAST:event_btn_b2_themspMouseClicked
-
-    private void btn_b2_themspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_b2_themspActionPerformed
         tbl_ChotSanPham = (DefaultTableModel) tb_chotsanpham.getModel();
         b2_masp = lb_b2_masp.getText();
         b2_tensp = lb_b2_tensp.getText();
@@ -882,6 +890,10 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
             tbl_ChotSanPham.addRow(row);
         }
         TinhTongGia(tbl_ChotSanPham, lb_b2_tonggiasp);
+    }//GEN-LAST:event_btn_b2_themspMouseClicked
+
+    private void btn_b2_themspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_b2_themspActionPerformed
+        // TODO add your handling code here:
     }//GEN-LAST:event_btn_b2_themspActionPerformed
 
     private void tb_chotdichvuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_chotdichvuMouseClicked
@@ -911,6 +923,60 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
         }
         TinhTongGia(tbl_ChotSanPham, lb_b2_tonggiasp);
     }//GEN-LAST:event_btn_b2_loaibosanphamMouseClicked
+
+    private void btn_hoanthanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hoanthanhActionPerformed
+        try {
+            b2_giadv = lb_b2_giadv.getText();
+            b2_giasp = lb_b2_giasp.getText();
+            if (b2_giadv.isEmpty()) {
+                b2_giadv = "0";
+            }
+
+            if (b2_giasp.isEmpty()) {
+                b2_giasp = "0";
+            }
+            tbl_PhieuBonus cndv = new tbl_PhieuBonus("", JP_DatPhong.maPhieuDk, b2_giadv);
+            DatPhongController.ThemPhieuBonus(cndv, "MaPhieuDichVu", "PhieuDichVu", "PDV");
+            tbl_PhieuBonus cnsp = new tbl_PhieuBonus("", JP_DatPhong.maPhieuDk, b2_giasp);
+            DatPhongController.ThemPhieuBonus(cnsp, "MaPhieuSanPham", "PhieuSanPham", "PSP");
+
+            for (int i = 0; i < tb_chotdichvu.getRowCount(); i++) {
+                b2_madv = tb_chotdichvu.getValueAt(i, 0).toString();
+                b2_giadv = tb_chotdichvu.getValueAt(i, 2).toString();
+                tbl_CTPhieuDV cnCTPDV = new tbl_CTPhieuDV("", "", b2_madv, b2_giadv);
+                DatPhongController.ThemCTPhieuDichVu(cnCTPDV);
+            }
+
+            for (int i = 0; i < tb_chotsanpham.getRowCount(); i++) {
+                b2_masp = tb_chotsanpham.getValueAt(i, 0).toString();
+                b2_soluongsp = tb_chotsanpham.getValueAt(i, 2).toString();
+                b2_giasp = tb_chotsanpham.getValueAt(i, 3).toString();
+                tbl_CTPhieuSP cnCTPSP = new tbl_CTPhieuSP("", "", b2_masp, b2_soluongsp, b2_giasp);
+                DatPhongController.ThemCTPhieuSanPham(cnCTPSP);
+            }
+            double tongdv = Double.parseDouble(lb_b2_tonggiadv.getText());
+            double tongphong = Double.parseDouble(JP_DatPhong.tinhTien);
+            double tongsp = Double.parseDouble(lb_b2_tonggiasp.getText());
+
+            b2_tongphieu = String.valueOf(tongphong + tongsp + tongdv);
+            LocalDate currentDate = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            String ngayHienTai = currentDate.format(formatter);
+            b2_tiencoc = txt_b2_tiencoc.getText();
+            if (b2_tiencoc.isEmpty()) {
+                b2_tiencoc = "0";
+            }
+            tbl_HoaDon cnhd = new tbl_HoaDon("", JP_DatPhong.maPhieuDk, "", "", ngayHienTai, b2_tongphieu, b2_tiencoc);
+            DatPhongController.ThemHoaDon(cnhd);
+            JOptionPane.showMessageDialog(this, "Đặt phòng Thành Công!", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+            JFrame jf_Main = new Home();
+            jf_Main.setLocationRelativeTo(null);
+            jf_Main.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(JF_DatPhongB2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_hoanthanhActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         try {
@@ -984,6 +1050,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
     private javax.swing.JButton btn_b2_themsp;
     private javax.swing.JLabel btn_b2_timkiemdv;
     private javax.swing.JLabel btn_giamsoluong;
+    private javax.swing.JButton btn_hoanthanh;
     private javax.swing.JLabel btn_refreshsp;
     private javax.swing.JLabel btn_themsoluong;
     private javax.swing.JLabel btn_timkiemdv;

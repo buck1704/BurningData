@@ -255,7 +255,6 @@ public class JP_ThongKe extends javax.swing.JPanel {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new java.awt.BorderLayout());
 
-        jTabbedPane2.setFont(new java.awt.Font("Montserrat Medium", 2, 12)); // NOI18N
         jTabbedPane2.setPreferredSize(new java.awt.Dimension(900, 710));
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
@@ -822,7 +821,7 @@ public class JP_ThongKe extends javax.swing.JPanel {
         jPanel10.add(jPanel13);
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sắp xếp theo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 2, 12))); // NOI18N
+        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sắp xếp theo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 12))); // NOI18N
         jPanel15.setPreferredSize(new java.awt.Dimension(260, 200));
         jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEADING, 5, 8));
 
@@ -1191,7 +1190,7 @@ public class JP_ThongKe extends javax.swing.JPanel {
         jScrollPane6.setViewportView(tb_dichvu);
         if (tb_dichvu.getColumnModel().getColumnCount() > 0) {
             tb_dichvu.getColumnModel().getColumn(0).setPreferredWidth(35);
-            tb_dichvu.getColumnModel().getColumn(1).setPreferredWidth(125);
+            tb_dichvu.getColumnModel().getColumn(1).setPreferredWidth(75);
             tb_dichvu.getColumnModel().getColumn(2).setPreferredWidth(50);
             tb_dichvu.getColumnModel().getColumn(3).setPreferredWidth(150);
         }

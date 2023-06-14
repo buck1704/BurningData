@@ -103,7 +103,7 @@ public class JF_QuenMatKhau extends javax.swing.JFrame {
         jLabel6.setText("Phone:");
 
         bt_QuenMatKhau.setBackground(new java.awt.Color(255, 255, 255));
-        bt_QuenMatKhau.setFont(new java.awt.Font("Montserrat", 1, 13)); // NOI18N
+        bt_QuenMatKhau.setFont(new java.awt.Font("Montserrat", 0, 13)); // NOI18N
         bt_QuenMatKhau.setText("Submit");
         bt_QuenMatKhau.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         bt_QuenMatKhau.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +117,7 @@ public class JF_QuenMatKhau extends javax.swing.JFrame {
         jLabel8.setText("Confirm Password:");
 
         bt_Back.setBackground(new java.awt.Color(255, 255, 255));
-        bt_Back.setFont(new java.awt.Font("Montserrat", 1, 13)); // NOI18N
+        bt_Back.setFont(new java.awt.Font("Montserrat", 0, 13)); // NOI18N
         bt_Back.setText("Back");
         bt_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         bt_Back.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

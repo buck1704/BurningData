@@ -243,8 +243,7 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cập Nhật", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 11))); // NOI18N
         jPanel6.setPreferredSize(new java.awt.Dimension(360, 79));
 
-        bt_them.setBackground(new java.awt.Color(255, 255, 255));
-        bt_them.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_them.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_them.setText("Thêm ");
         bt_them.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,8 +251,7 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
             }
         });
 
-        bt_sua.setBackground(new java.awt.Color(255, 255, 255));
-        bt_sua.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_sua.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_sua.setText("Sửa ");
         bt_sua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,8 +259,7 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
             }
         });
 
-        bt_xoa.setBackground(new java.awt.Color(255, 255, 255));
-        bt_xoa.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_xoa.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_xoa.setText("Xóa");
         bt_xoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,7 +276,7 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
                 .addComponent(bt_them)
                 .addGap(46, 46, 46)
                 .addComponent(bt_sua, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(bt_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -300,8 +297,7 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Điều Khiển", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 11))); // NOI18N
         jPanel7.setPreferredSize(new java.awt.Dimension(360, 70));
 
-        bt_ghi.setBackground(new java.awt.Color(255, 255, 255));
-        bt_ghi.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_ghi.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_ghi.setText("Ghi");
         bt_ghi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -309,8 +305,7 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
             }
         });
 
-        bt_khong.setBackground(new java.awt.Color(255, 255, 255));
-        bt_khong.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_khong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_khong.setText("Không");
         bt_khong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -318,8 +313,7 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
             }
         });
 
-        bt_lammoi.setBackground(new java.awt.Color(255, 255, 255));
-        bt_lammoi.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_lammoi.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_lammoi.setText("Làm Mới");
         bt_lammoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,7 +328,7 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(bt_ghi, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(bt_khong)
                 .addGap(36, 36, 36)
                 .addComponent(bt_lammoi)

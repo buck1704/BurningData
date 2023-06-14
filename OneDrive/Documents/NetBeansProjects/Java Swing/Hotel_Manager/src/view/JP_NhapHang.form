@@ -270,7 +270,7 @@
             <Component class="javax.swing.JTextField" name="txtmanhap">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="14" style="0"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -285,7 +285,7 @@
             <Component class="javax.swing.JTextField" name="txtmasp">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="14" style="0"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
               </Properties>
               <Events>
@@ -307,7 +307,7 @@
             <Component class="javax.swing.JTextField" name="txtncc">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="14" style="0"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
               </Properties>
               <Events>
@@ -325,7 +325,7 @@
             <Component class="javax.swing.JTextField" name="txtloaihang">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="14" style="0"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -340,7 +340,7 @@
             <Component class="javax.swing.JTextField" name="txtsoluong">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="14" style="0"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -383,7 +383,7 @@
             <Component class="javax.swing.JTextField" name="txtgianhap">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="14" style="0"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -398,7 +398,7 @@
             <Component class="javax.swing.JLabel" name="txtngaynhap">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="14" style="1"/>
+                  <Font name="Montserrat" size="11" style="0"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -475,11 +475,8 @@
             </Component>
             <Component class="javax.swing.JButton" name="bttimkiem">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="1"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ch&#x1ecd;n"/>
               </Properties>
@@ -511,7 +508,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnhaphang" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                      <Component id="btsua" pref="87" max="32767" attributes="0"/>
+                      <Component id="btsua" pref="90" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="32767" attributes="0"/>
                       <Component id="btxoa" min="-2" pref="81" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -534,11 +531,8 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnhaphang">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="1"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p H&#xe0;ng"/>
               </Properties>
@@ -548,11 +542,8 @@
             </Component>
             <Component class="javax.swing.JButton" name="btsua">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="1"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
               </Properties>
@@ -562,11 +553,8 @@
             </Component>
             <Component class="javax.swing.JButton" name="btxoa">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="1"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
               </Properties>
@@ -596,7 +584,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btghi" pref="94" max="32767" attributes="0"/>
+                      <Component id="btghi" pref="97" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="32767" attributes="0"/>
                       <Component id="btkhong" min="-2" pref="89" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="32767" attributes="0"/>
@@ -621,11 +609,8 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btghi">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="1"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ghi"/>
               </Properties>
@@ -635,11 +620,8 @@
             </Component>
             <Component class="javax.swing.JButton" name="btkhong">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="1"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Kh&#xf4;ng"/>
               </Properties>
@@ -649,11 +631,8 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="1"/>
+                  <Font name="Montserrat Medium" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
               </Properties>

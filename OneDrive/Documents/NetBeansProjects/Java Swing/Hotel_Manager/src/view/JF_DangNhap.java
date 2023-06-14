@@ -1,6 +1,7 @@
 package view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.*;
 import java.sql.DriverManager;
@@ -10,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import model.Hotel_Manager;
-import view_khachhang.JF_HomeKhachHang;
+import view_nhanvien.JF_HomeKhachHang;
 
 public class JF_DangNhap extends javax.swing.JFrame {
     public JF_DangNhap() {
@@ -109,8 +110,8 @@ public class JF_DangNhap extends javax.swing.JFrame {
 
         txt_MatKhau.setMargin(new java.awt.Insets(0, 5, 0, 0));
 
-        bt_DangNhap.setBackground(new java.awt.Color(255, 255, 255));
-        bt_DangNhap.setFont(new java.awt.Font("Montserrat", 1, 13)); // NOI18N
+        bt_DangNhap.setBackground(new java.awt.Color(239, 239, 239));
+        bt_DangNhap.setFont(new java.awt.Font("Montserrat Light", 1, 13)); // NOI18N
         bt_DangNhap.setText("Đăng Nhập");
         bt_DangNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         bt_DangNhap.addActionListener(new java.awt.event.ActionListener() {

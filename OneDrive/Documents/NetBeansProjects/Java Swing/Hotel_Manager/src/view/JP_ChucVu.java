@@ -144,7 +144,7 @@ public class JP_ChucVu extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông Tin Chi Tiết", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat Medium", 0, 11))); // NOI18N
 
-        txt_machucvu.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txt_machucvu.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel2.setText("Mã Chức Vụ:");
@@ -152,9 +152,9 @@ public class JP_ChucVu extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel3.setText("Tên Chức Vụ:");
 
-        txt_tenchucvu.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txt_tenchucvu.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
-        txt_luongchucvu.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        txt_luongchucvu.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel4.setText("Lương theo theo ngày:");
@@ -198,8 +198,7 @@ public class JP_ChucVu extends javax.swing.JPanel {
         flowLayout2.setAlignOnBaseline(true);
         jPanel1.setLayout(flowLayout2);
 
-        bt_them.setBackground(new java.awt.Color(255, 255, 255));
-        bt_them.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_them.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_them.setText("Thêm");
         bt_them.setPreferredSize(new java.awt.Dimension(75, 25));
         bt_them.addActionListener(new java.awt.event.ActionListener() {
@@ -209,8 +208,7 @@ public class JP_ChucVu extends javax.swing.JPanel {
         });
         jPanel1.add(bt_them);
 
-        bt_sua.setBackground(new java.awt.Color(255, 255, 255));
-        bt_sua.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_sua.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_sua.setText("Sửa");
         bt_sua.setPreferredSize(new java.awt.Dimension(75, 25));
         bt_sua.addActionListener(new java.awt.event.ActionListener() {
@@ -220,8 +218,7 @@ public class JP_ChucVu extends javax.swing.JPanel {
         });
         jPanel1.add(bt_sua);
 
-        bt_xoa.setBackground(new java.awt.Color(255, 255, 255));
-        bt_xoa.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_xoa.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_xoa.setText("Xoá");
         bt_xoa.setPreferredSize(new java.awt.Dimension(75, 25));
         bt_xoa.addActionListener(new java.awt.event.ActionListener() {
@@ -235,8 +232,7 @@ public class JP_ChucVu extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Điều Khiển", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat", 0, 11))); // NOI18N
         jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5));
 
-        bt_ghi.setBackground(new java.awt.Color(255, 255, 255));
-        bt_ghi.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_ghi.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_ghi.setText("Ghi");
         bt_ghi.setPreferredSize(new java.awt.Dimension(100, 25));
         bt_ghi.addActionListener(new java.awt.event.ActionListener() {
@@ -246,8 +242,7 @@ public class JP_ChucVu extends javax.swing.JPanel {
         });
         jPanel3.add(bt_ghi);
 
-        bt_khong.setBackground(new java.awt.Color(255, 255, 255));
-        bt_khong.setFont(new java.awt.Font("Montserrat Medium", 1, 12)); // NOI18N
+        bt_khong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         bt_khong.setText("Không");
         bt_khong.setPreferredSize(new java.awt.Dimension(100, 25));
         bt_khong.addActionListener(new java.awt.event.ActionListener() {

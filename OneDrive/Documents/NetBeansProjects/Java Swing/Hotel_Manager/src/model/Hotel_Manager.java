@@ -29,7 +29,7 @@ public class Hotel_Manager {
 //    }
     
  // Cách 2: sử dụng sql server    
-    public static String dbURL = "jdbc:sqlserver://localhost;databaseName=hotel_manager;user=sa;password=sa; encrypt = false";
+    public static String dbURL = "jdbc:sqlserver://localhost; databaseName=hotel_manager; user=sa; password=sa; encrypt = false";
     public static String sTenDN, sMaNhanVien, sMatKhau;
     public static void main(String[] args) {
         JFrame login = new JF_DangNhap();
