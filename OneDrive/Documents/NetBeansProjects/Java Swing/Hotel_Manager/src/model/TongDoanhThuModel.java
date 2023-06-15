@@ -1,8 +1,7 @@
 package model;
 
 public class TongDoanhThuModel {
-    String nam, thang, doanhthudichvu, doanhthusanpham, doanhthuphong, soluongdichvu, soluongsanpham, 
-            soluongphong, tonggianhap, tongdoanhthu;
+    String nam, thang, doanhthudichvu, doanhthusanpham, doanhthuphong, soluongdichvu, soluongsanpham, soluongphong, tonggianhap, tongdoanhthu;
 
     public TongDoanhThuModel() {
     }
@@ -99,6 +98,4 @@ public class TongDoanhThuModel {
     public void setTongdoanhthu(String tongdoanhthu) {
         this.tongdoanhthu = tongdoanhthu;
     }
-
-    
 }

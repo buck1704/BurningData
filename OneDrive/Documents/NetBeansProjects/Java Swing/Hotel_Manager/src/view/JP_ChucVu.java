@@ -1,31 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
 import controller.QuanLyController;
 import controller.QuanLyKhachSanController;
 import java.io.IOException;
-import java.math.RoundingMode;
 import java.sql.SQLException;
-import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Locale;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.tbl_ChucVu;
-import textfield.SearchOptinEvent;
-import textfield.SearchOption;
+import container.SearchOptinEvent;
+import container.SearchOption;
 
-/**
- *
- * @author 05032002
- */
-public class JP_ChucVu extends javax.swing.JPanel {
+public final class JP_ChucVu extends javax.swing.JPanel {
 
     DefaultTableModel tbl_ChucVu;
     ArrayList<tbl_ChucVu> arrChucVu = new ArrayList<>();
@@ -43,9 +31,9 @@ public class JP_ChucVu extends javax.swing.JPanel {
                 txt.setHint("Search by " + option.getName() + "...");
             }
         });
-        txt.addOption(new SearchOption("machucvu", new ImageIcon(getClass().getResource("/textfield/user.png"))));
-        txt.addOption(new SearchOption("tenchucvu", new ImageIcon(getClass().getResource("/textfield/tel.png"))));
-        txt.addOption(new SearchOption("LuongTheoNgay", new ImageIcon(getClass().getResource("/textfield/email.png"))));
+        txt.addOption(new SearchOption("machucvu", new ImageIcon(getClass().getResource("/image/user.png"))));
+        txt.addOption(new SearchOption("tenchucvu", new ImageIcon(getClass().getResource("/image/tel.png"))));
+        txt.addOption(new SearchOption("LuongTheoNgay", new ImageIcon(getClass().getResource("/image/email.png"))));
     }
 
     public void LayNguon(String dk, String gt) throws IOException {
@@ -92,7 +80,6 @@ public class JP_ChucVu extends javax.swing.JPanel {
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        txt = new textfield.TextFieldSearchOption();
         jPanel2 = new javax.swing.JPanel();
         txt_machucvu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -107,6 +94,7 @@ public class JP_ChucVu extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         bt_ghi = new javax.swing.JButton();
         bt_khong = new javax.swing.JButton();
+        txt = new container.TextFieldSearchOption();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_chucvu = new javax.swing.JTable();
@@ -132,14 +120,6 @@ public class JP_ChucVu extends javax.swing.JPanel {
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel8.setPreferredSize(new java.awt.Dimension(400, 700));
-
-        txt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(76, 41, 211)));
-        txt.setMargin(new java.awt.Insets(0, 10, 0, 0));
-        txt.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtKeyReleased(evt);
-            }
-        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông Tin Chi Tiết", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Montserrat Medium", 0, 11))); // NOI18N
@@ -252,24 +232,26 @@ public class JP_ChucVu extends javax.swing.JPanel {
         });
         jPanel3.add(bt_khong);
 
+        txt.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap(28, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
@@ -484,7 +466,7 @@ public class JP_ChucVu extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tb_chucvu;
-    private textfield.TextFieldSearchOption txt;
+    private container.TextFieldSearchOption txt;
     private javax.swing.JTextField txt_luongchucvu;
     private javax.swing.JTextField txt_machucvu;
     private javax.swing.JTextField txt_tenchucvu;

@@ -20,20 +20,6 @@ public final class JP_Phong extends javax.swing.JPanel {
     private static String macu;
     private static String maPhong, loaiPhong,sogiuong, sophong, giaPhong, tinhTrang, moTa;
     
-    public JP_Phong() throws IOException {
-        initComponents();
-        LayNguon();
-    }
-    
-    public void LayNguon() throws IOException {
-        tbl_Phong = (DefaultTableModel) tb_Phong.getModel();
-        arrPhong = QuanLyController.NguonPhong();
-        tbl_Phong.setRowCount(0);
-        arrPhong.forEach((KQ) -> {
-            tbl_Phong.addRow(new Object[]{KQ.getMaPhong(), KQ.getLoaiPhong(),KQ.getSoGiuong(), KQ.getSoPhong(), KQ.getGiaPhong(), KQ.getTinhTrang(), KQ.getMoTa()});
-        });
-    }
-    
     DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer() {
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -46,6 +32,23 @@ public final class JP_Phong extends javax.swing.JPanel {
             return c;
         }
     };
+    
+    public JP_Phong() throws IOException {
+        initComponents();
+        LayNguon();
+    }
+    
+    public void LayNguon() throws IOException {
+        tbl_Phong = (DefaultTableModel) tb_Phong.getModel();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        arrPhong = QuanLyController.NguonPhong();
+        tbl_Phong.setRowCount(0);
+        arrPhong.forEach((KQ) -> {
+            tbl_Phong.addRow(new Object[]{KQ.getMaPhong(), KQ.getLoaiPhong(),KQ.getSoGiuong(), KQ.getSoPhong(), KQ.getGiaPhong(), KQ.getTinhTrang(), KQ.getMoTa()});
+        });
+    }
+    
+    
     
     public void KhoaMo(boolean b) {
         txt_maphong.setEditable(b);
@@ -441,10 +444,14 @@ public final class JP_Phong extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tb_Phong);
         if (tb_Phong.getColumnModel().getColumnCount() > 0) {
             tb_Phong.getColumnModel().getColumn(0).setPreferredWidth(25);
+            tb_Phong.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
             tb_Phong.getColumnModel().getColumn(1).setPreferredWidth(75);
             tb_Phong.getColumnModel().getColumn(2).setPreferredWidth(25);
+            tb_Phong.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
             tb_Phong.getColumnModel().getColumn(3).setPreferredWidth(25);
+            tb_Phong.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
             tb_Phong.getColumnModel().getColumn(4).setPreferredWidth(25);
+            tb_Phong.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
             tb_Phong.getColumnModel().getColumn(5).setPreferredWidth(25);
             tb_Phong.getColumnModel().getColumn(5).setCellRenderer(centerRenderer);
             tb_Phong.getColumnModel().getColumn(6).setPreferredWidth(200);

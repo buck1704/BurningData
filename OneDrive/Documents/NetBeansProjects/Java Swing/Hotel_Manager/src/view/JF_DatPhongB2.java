@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.tbl_CTPhieuDV;
@@ -27,16 +29,17 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
     List<tbl_DichVu> arrDichVu_b2 = new ArrayList<>();
     List<tbl_HangHoa> arrSanPham_b2 = new ArrayList<>();
     private String b2_madv, b2_tendv, b2_giadv, b2_masp, b2_tensp, b2_soluongsp, b2_giasp, b2_tongphieu, b2_tiencoc;
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
 
     public JF_DatPhongB2() throws IOException {
         initComponents();
-        Buoc2_LayNguonDV();
-        Buoc2_LayNguonSP();
-
+        LayNguonDV();
+        LayNguonSP();
     }
 
-    public void Buoc2_LayNguonDV() throws IOException {
+    public void LayNguonDV() throws IOException {
         tbl_DichVu_b2 = (DefaultTableModel) tb_dichvu.getModel();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         arrDichVu_b2 = DatPhongController.NguonDichVu("");
         tbl_DichVu_b2.setRowCount(0);
         arrDichVu_b2.forEach((KQ) -> {
@@ -44,8 +47,9 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
         });
     }
 
-    public void Buoc2_LayNguonSP() {
+    public void LayNguonSP() {
         tbl_SanPham_b2 = (DefaultTableModel) tb_sanpham.getModel();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         arrSanPham_b2 = DatPhongController.NguonSanPham("");
         tbl_SanPham_b2.setRowCount(0);
         arrSanPham_b2.forEach((KQ) -> {
@@ -64,10 +68,8 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
         }
         String tongTienSP = String.valueOf(b2_tongTienSP);
         lb_cantinh.setText(tongTienSP);                      // Chuyển đổi kiểu int sang String
-
         double giadv = Double.parseDouble(lb_b2_tonggiadv.getText());
         double giasp = Double.parseDouble(lb_b2_tonggiasp.getText());
-
         double tong = giadv + giasp;
         String tongphieu = String.valueOf(tong);
         lb_b2_tongphieudv.setText(tongphieu);
@@ -212,6 +214,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tb_chotdichvu.setColumnSelectionAllowed(true);
         tb_chotdichvu.setRowHeight(20);
         tb_chotdichvu.setRowMargin(5);
         tb_chotdichvu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -220,10 +223,13 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
             }
         });
         jScrollPane6.setViewportView(tb_chotdichvu);
+        tb_chotdichvu.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (tb_chotdichvu.getColumnModel().getColumnCount() > 0) {
             tb_chotdichvu.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tb_chotdichvu.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
             tb_chotdichvu.getColumnModel().getColumn(1).setPreferredWidth(100);
             tb_chotdichvu.getColumnModel().getColumn(2).setPreferredWidth(20);
+            tb_chotdichvu.getColumnModel().getColumn(2).setCellRenderer(null);
         }
 
         jPanel6.add(jScrollPane6, java.awt.BorderLayout.CENTER);
@@ -375,6 +381,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tb_chotsanpham.setColumnSelectionAllowed(true);
         tb_chotsanpham.setRowHeight(20);
         tb_chotsanpham.setRowMargin(5);
         tb_chotsanpham.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -383,11 +390,15 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
             }
         });
         jScrollPane7.setViewportView(tb_chotsanpham);
+        tb_chotsanpham.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (tb_chotsanpham.getColumnModel().getColumnCount() > 0) {
             tb_chotsanpham.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tb_chotsanpham.getColumnModel().getColumn(0).setCellRenderer(null);
             tb_chotsanpham.getColumnModel().getColumn(1).setPreferredWidth(100);
             tb_chotsanpham.getColumnModel().getColumn(2).setPreferredWidth(20);
+            tb_chotsanpham.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
             tb_chotsanpham.getColumnModel().getColumn(3).setPreferredWidth(20);
+            tb_chotsanpham.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
         }
 
         jPanel8.add(jScrollPane7, java.awt.BorderLayout.CENTER);
@@ -430,6 +441,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tb_dichvu.setColumnSelectionAllowed(true);
         tb_dichvu.setRowHeight(22);
         tb_dichvu.setRowMargin(5);
         tb_dichvu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -438,10 +450,13 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(tb_dichvu);
+        tb_dichvu.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (tb_dichvu.getColumnModel().getColumnCount() > 0) {
             tb_dichvu.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tb_dichvu.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
             tb_dichvu.getColumnModel().getColumn(1).setPreferredWidth(150);
             tb_dichvu.getColumnModel().getColumn(2).setPreferredWidth(50);
+            tb_dichvu.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
         }
 
         jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, 290));
@@ -585,6 +600,7 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tb_sanpham.setColumnSelectionAllowed(true);
         tb_sanpham.setRowHeight(22);
         tb_sanpham.setRowMargin(5);
         tb_sanpham.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -593,11 +609,15 @@ public final class JF_DatPhongB2 extends javax.swing.JFrame {
             }
         });
         jScrollPane4.setViewportView(tb_sanpham);
+        tb_sanpham.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (tb_sanpham.getColumnModel().getColumnCount() > 0) {
             tb_sanpham.getColumnModel().getColumn(0).setPreferredWidth(35);
+            tb_sanpham.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
             tb_sanpham.getColumnModel().getColumn(1).setPreferredWidth(150);
             tb_sanpham.getColumnModel().getColumn(2).setPreferredWidth(50);
+            tb_sanpham.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
             tb_sanpham.getColumnModel().getColumn(3).setPreferredWidth(20);
+            tb_sanpham.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
         }
 
         jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 34, 450, 330));

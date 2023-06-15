@@ -27,16 +27,14 @@ public class DatPhongController {
     private static Connection conn = null;
     private static String sql, sql1;
 
-    public static List<tbl_Phong> NguonPhong(String sPhanLoai, String sMaKT) throws IOException {
+    public static List<tbl_Phong> NguonPhong() throws IOException {
         List<tbl_Phong> arrPhong = new ArrayList<>();
         Statement state = null;
         try {
             conn = DriverManager.getConnection(Hotel_Manager.dbURL);
             // Thực hiện truy vấn và lấy kết quả trả về
             sql = "Select MaPhong, LoaiPhong, LEFT(MaPhong,1) as Tang, TinhTrang From Phong";
-            if (sMaKT != null && !sMaKT.equals("")) {
-                sql = sql + " Where " + sPhanLoai + " Like '%" + sMaKT + "%'";
-            }
+            
             sql = sql + " Order by MaPhong";
             state = conn.createStatement();
             ResultSet rs = state.executeQuery(sql);

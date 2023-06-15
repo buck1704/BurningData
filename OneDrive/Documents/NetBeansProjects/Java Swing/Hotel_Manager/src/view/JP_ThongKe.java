@@ -12,7 +12,7 @@ import model.tbl_DichVu;
 import model.tbl_HangHoa;
 import model.tbl_Phong;
 
-public class JP_ThongKe extends javax.swing.JPanel {
+public final class JP_ThongKe extends javax.swing.JPanel {
     
     DefaultTableModel tbl_TongDoanhThu, tbl_Phong, tbl_HangHoa, tbl_DichVu;
     ArrayList<TongDoanhThuModel> arrTongDoanhThu = new ArrayList<>();
@@ -20,7 +20,7 @@ public class JP_ThongKe extends javax.swing.JPanel {
     ArrayList<tbl_HangHoa> arrDoanhThuSanPham = new ArrayList<>();
     ArrayList<tbl_DichVu> arrDoanhThuDichVu = new ArrayList<>();
     
-    String SXPhong_ThuTu = "DESC", SXTHEOTHANG = "1", SXSanPham_ThuTu = "DESC", SXDichVu_ThuTu = "DESC";
+    String SXTHEOTHANG = "1", SXPhong_ThuTu = "DESC", SXSanPham_ThuTu = "DESC", SXDichVu_ThuTu = "DESC";
     public JP_ThongKe() throws IOException {
         initComponents();
         TongDoanhThu();
