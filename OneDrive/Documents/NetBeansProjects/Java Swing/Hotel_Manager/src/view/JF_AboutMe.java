@@ -1,25 +1,27 @@
 package view;
 
-import controller.QuanLyController;
 import model.tbl_DoiMatKhau;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import controller.QuanLyKhachSanController;
 
 public class JF_AboutMe extends javax.swing.JFrame {
 
-    List<tbl_DoiMatKhau> arrDoiMatKhau = new ArrayList<>();
-    private static String id, mkc, mkm;
+    public static String laymanhanvien,laytennv, laymacv, laygioitinh, layngaysinh, laysodienthoai,laydiachi, layluong;
 
     public JF_AboutMe() {
         initComponents();
-
+        txt_manhanvien.setText(JF_AboutMe.laymanhanvien);
+        txt_tennhanvien.setText(JF_AboutMe.laytennv);
+        txt_machucvu.setText(JF_AboutMe.laymacv);
+        if(JF_AboutMe.laygioitinh.equals("1")){
+            txt_gioitinh.setText("Nữ");
+        } else {
+            txt_gioitinh.setText("Nam");
+        }
+        txt_ngaysinh.setText(JF_AboutMe.layngaysinh);
+        txt_sdt.setText(JF_AboutMe.laysodienthoai);
+        txt_diachi.setText(JF_AboutMe.laydiachi);
+        txt_luong.setText(JF_AboutMe.layluong);
     }
 
     public void KhoaMo(boolean b) {
@@ -348,9 +350,6 @@ public class JF_AboutMe extends javax.swing.JFrame {
 
     }//GEN-LAST:event_bt_DoiMKActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

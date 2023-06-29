@@ -124,13 +124,17 @@ public class QuanLyController {
         } 
     }
     
-    public static ArrayList<tbl_Phong> NguonPhong() throws IOException {
+    public static ArrayList<tbl_Phong> NguonPhong(String sMaPhong) throws IOException {
         ArrayList<tbl_Phong> arrPhong = new ArrayList<>();
         Statement state = null;
         try {
             java.sql.Connection conn = DriverManager.getConnection(Hotel_Manager.dbURL);
             // Thực hiện truy vấn và lấy kết quả trả về
-            sql = "Select * From Phong Order by MaPhong";
+            sql = "Select * From Phong ";
+            if(sMaPhong != null && !sMaPhong.equals("")){
+                sql = sql + " Where MaPhong ='" + sMaPhong + "'";
+            }
+            sql = sql + " Order by MaPhong";
             state = conn.createStatement();
             ResultSet rs = state.executeQuery(sql);
             // Xử lý kết quả trả về
@@ -157,38 +161,38 @@ public class QuanLyController {
         }
         return arrPhong;
     }
-    public static void ThemPhong(tbl_Phong bp) {
+    public static void ThemPhong(tbl_Phong model) {
         conn = null;
         PreparedStatement state = null;
         try {
-            java.sql.Connection conn = DriverManager.getConnection(Hotel_Manager.dbURL);
+            conn = DriverManager.getConnection(Hotel_Manager.dbURL);
             sql = "INSERT INTO Phong VALUES(?, ?, ?, ?, ?, ?, ?)";
             state = conn.prepareStatement(sql);
-            state.setString(1, bp.getMaPhong());
-            state.setString(2, bp.getLoaiPhong());
-            state.setString(3, bp.getSoGiuong());
-            state.setString(4, bp.getSoPhong());
-            state.setString(5, bp.getGiaPhong());
-            state.setString(6, bp.getTinhTrang());
-            state.setString(7, bp.getMoTa());
+            state.setString(1, model.getMaPhong());
+            state.setString(2, model.getLoaiPhong());
+            state.setString(3, model.getSoGiuong());
+            state.setString(4, model.getSoPhong());
+            state.setString(5, model.getGiaPhong());
+            state.setString(6, model.getTinhTrang());
+            state.setString(7, model.getMoTa());
             state.execute();
         } catch (SQLException ex) {
         } 
     }
-    public static void CapNhatPhong(tbl_Phong bp, String maphong) {
+    public static void CapNhatPhong(tbl_Phong model, String maphong) {
         conn = null;
         PreparedStatement state = null;
         try {
             java.sql.Connection conn = DriverManager.getConnection(Hotel_Manager.dbURL);
             sql = "UPDATE phong SET MaPhong = ?, LoaiPhong = ?,SoGiuong = ?, SoPhong = ?, GiaPhong = ?, TinhTrang = ?, MoTa = ? WHERE MaPhong = ?";
             state = conn.prepareStatement(sql);
-            state.setString(1, bp.getMaPhong());
-            state.setString(2, bp.getLoaiPhong());
-            state.setString(3, bp.getSoGiuong());
-            state.setString(4, bp.getSoPhong());
-            state.setString(5, bp.getGiaPhong());
-            state.setString(6, bp.getTinhTrang());
-            state.setString(7, bp.getMoTa());
+            state.setString(1, model.getMaPhong());
+            state.setString(2, model.getLoaiPhong());
+            state.setString(3, model.getSoGiuong());
+            state.setString(4, model.getSoPhong());
+            state.setString(5, model.getGiaPhong());
+            state.setString(6, model.getTinhTrang());
+            state.setString(7, model.getMoTa());
             state.setString(8, maphong);
             state.execute();
             state.close();
@@ -197,7 +201,8 @@ public class QuanLyController {
             ex.printStackTrace();
         } 
     }
-    public static void XoaPhong( String maphong) {
+    
+    public static void XoaPhong(String maphong) {
         conn = null;
         PreparedStatement state = null;
         try {

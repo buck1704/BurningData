@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.tbl_PhieuDatPhong;
 
-public class JP_SuaPhieuDatPhong extends javax.swing.JPanel {
+public final class JP_SuaPhieuDatPhong extends javax.swing.JPanel {
     DefaultTableModel tbl_PhieuDatPhong;
     List<tbl_PhieuDatPhong> arrPhieuDatPhong = new ArrayList<>();
     private static boolean ktThem;
@@ -29,7 +29,6 @@ public class JP_SuaPhieuDatPhong extends javax.swing.JPanel {
         KhoaMo(false);
     }
 
-    
     public void LayNguonPhieuDatPhong() throws IOException {
         tbl_PhieuDatPhong = (DefaultTableModel)  tb_phieudatphong.getModel();
         arrPhieuDatPhong = DatPhongController.NguonPhieuDatPhong(sTimMaDatPhong);
@@ -41,7 +40,6 @@ public class JP_SuaPhieuDatPhong extends javax.swing.JPanel {
     
    public void KhoaMo(boolean b) {
         txt_maphong.setEditable(b);
-        
     }
     
 
@@ -337,7 +335,6 @@ public class JP_SuaPhieuDatPhong extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_timkiemmadatphongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_timkiemmadatphongMouseClicked
-        // TODO add your handling code here:
         sTimMaDatPhong = txt_madatphong.getText();
         try{
             LayNguonPhieuDatPhong();
@@ -347,16 +344,12 @@ public class JP_SuaPhieuDatPhong extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_timkiemmadatphongMouseClicked
 
     private void btn_timkiemmadatphongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_timkiemmadatphongActionPerformed
-        // TODO add your handling code here:
-
     }//GEN-LAST:event_btn_timkiemmadatphongActionPerformed
 
     private void txt_madatphongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_madatphongActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txt_madatphongActionPerformed
 
     private void btn_suamaphongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_suamaphongMouseClicked
-
     }//GEN-LAST:event_btn_suamaphongMouseClicked
 
     private void btn_suamaphongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suamaphongActionPerformed
@@ -368,25 +361,23 @@ public class JP_SuaPhieuDatPhong extends javax.swing.JPanel {
         if (txt_ticket_madatphong.getText().length() <= 0) {
             return;
         }
-        mapdp=txt_ticket_madatphong.getText();
-        maphongcu=txt_maphong.getText();
+        mapdp = txt_ticket_madatphong.getText();
+        maphongcu = txt_maphong.getText();
         ktThem = false;
         KhoaMo(true);
     }//GEN-LAST:event_btn_suamaphongActionPerformed
 
     private void tb_phieudatphongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_phieudatphongMouseClicked
         try {
-            // TODO add your handling code here:
-
             int index = tb_phieudatphong.getSelectedRow();
             TableModel model = tb_phieudatphong.getModel();
-            MaPhieuDK= model.getValueAt(index, 0).toString();
-            MaKhachHang= model.getValueAt(index, 1).toString();
+            MaPhieuDK = model.getValueAt(index, 0).toString();
+            MaKhachHang = model.getValueAt(index, 1).toString();
             MaPhong = model.getValueAt(index, 2).toString();
             NgayDen = model.getValueAt(index, 3).toString();
             NgayDi = model.getValueAt(index, 4).toString();
-            MaNhanVien= model.getValueAt(index, 5).toString();
-            ThanhTien= model.getValueAt(index, 6).toString();
+            MaNhanVien = model.getValueAt(index, 5).toString();
+            ThanhTien = model.getValueAt(index, 6).toString();
 
             txt_ticket_madatphong.setText(MaPhieuDK);
             txt_ticket_makh.setText(MaKhachHang);
@@ -408,18 +399,18 @@ public class JP_SuaPhieuDatPhong extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_xacnhanMouseClicked
 
     private void btn_xacnhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xacnhanActionPerformed
-        MaPhieuDK= txt_ticket_madatphong.getText();
-        MaKhachHang= txt_ticket_makh.getText();
-        MaPhong= txt_maphong.getText();
+        MaPhieuDK = txt_ticket_madatphong.getText();
+        MaKhachHang = txt_ticket_makh.getText();
+        MaPhong = txt_maphong.getText();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String ngayDen = sdf.format(txt_ngayden.getDate());
         String ngayDi = sdf.format(txt_ngaydi.getDate());
         MaNhanVien=txt_manhanvien.getText();
         ThanhTien=txt_thanhtien.getText();
 
-        tbl_PhieuDatPhong cn = new tbl_PhieuDatPhong(MaPhieuDK,MaKhachHang,ngayDen,ngayDi,MaPhong,ThanhTien,MaNhanVien);
+        tbl_PhieuDatPhong cn = new tbl_PhieuDatPhong(MaPhieuDK, MaKhachHang, ngayDen, ngayDi, MaPhong, ThanhTien, MaNhanVien);
         if (ktThem == false) {
-            DatPhongController.CapNhatPhieuDatPhong(cn,mapdp, maphongcu);
+            DatPhongController.CapNhatPhieuDatPhong(cn, mapdp, maphongcu);
         }
         try {
             LayNguonPhieuDatPhong();

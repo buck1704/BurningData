@@ -26,9 +26,8 @@ public final class JP_DatPhong extends javax.swing.JPanel {
     List<tbl_KhachHang> arrKhachHang = new ArrayList<>();
     List<tbl_Phong> arrPhong = new ArrayList<>();
 
-    public static String makh, tenkh, sodt, diachi, gioitinh, cmnd, maPhong, loaiPhong, giaPhong, maPhieuDk, maNhanVien, tinhTien;
+    public static String makh, tenkh, sodt, diachi, gioitinh, cmnd, maPhong, loaiPhong, giaPhong, maPhieuDk, maNhanVien, tinhTien, laymanhanvien;
     public static Date ngayDen, ngayDi;
-    public static String laymanhanvien;
     public static double soNgay;
     
     DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer() {
@@ -41,8 +40,7 @@ public final class JP_DatPhong extends javax.swing.JPanel {
                 c.setBackground(table.getBackground());
             }
             return c;
-        }
-    };
+    }};
         
     public JP_DatPhong() throws IOException {
         initComponents();
@@ -60,6 +58,7 @@ public final class JP_DatPhong extends javax.swing.JPanel {
             tbl_Phong.addRow(new Object[]{KQ.getMaPhong(), KQ.getLoaiPhong(), KQ.getTang(), KQ.getTinhTrang()});
         });
     }
+    
     public void LayNguonKH(String phanloai, String giatri) throws IOException {
         tbl_KhachHang = (DefaultTableModel) tb_khachhang.getModel();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
@@ -69,7 +68,6 @@ public final class JP_DatPhong extends javax.swing.JPanel {
             tbl_KhachHang.addRow(new Object[]{KQ.getMakh(), KQ.getTenkh(), KQ.getSodt()});
         });
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -577,7 +575,6 @@ public final class JP_DatPhong extends javax.swing.JPanel {
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(JP_DatPhong.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_tb_khachhangMouseClicked
 
     private void tb_phongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_phongMouseClicked
@@ -596,7 +593,6 @@ public final class JP_DatPhong extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_timtheomakhachhangMouseClicked
 
     private void txt_tenkhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tenkhActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txt_tenkhActionPerformed
 
     private void btn_timtheotenkhachhangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_timtheotenkhachhangMouseClicked
@@ -639,6 +635,7 @@ public final class JP_DatPhong extends javax.swing.JPanel {
             }
             if (txt_maphieu.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Hãy nhập mã phiếu!", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                txt_maphieu.setFocusable(true);
                 return;
             }
             maPhong = modelP.getValueAt(tb_phong.getSelectedRow(), 0).toString();
@@ -665,16 +662,17 @@ public final class JP_DatPhong extends javax.swing.JPanel {
                 return;
             }
             if (DatPhongController.KiemTra("PhieuDatPhong", "MaPhieuDatPhong", maPhieuDk)) {
-                JOptionPane.showMessageDialog(this, "Mã phiếu đã tồn tại trong cơ sở dữ liệu.", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Mã phiếu đã tồn tại trong cơ sở dữ liệu!", "Thông Báo", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if (ngayDen == null || ngayDi == null || ngayDen.after(ngayDi)) {
-                JOptionPane.showMessageDialog(this, "Ngày đến hoặc ngày đi không hợp lệ", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ngày đến hoặc ngày đi không hợp lệ!", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                txt_checkin.setFocusable(true);
                 return;
             }
             Date ngayHienTai = new Date();
             if (txt_checkin.getDate().before(ngayHienTai)) {
-                JOptionPane.showMessageDialog(this, "Ngày đến phải sau ngày hiện tại.", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ngày đến phải sau ngày hiện tại!", "Thông Báo", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if (ngayDen != null && ngayDi != null) {

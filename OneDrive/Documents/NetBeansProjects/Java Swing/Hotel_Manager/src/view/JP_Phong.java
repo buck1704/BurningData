@@ -1,4 +1,5 @@
 package view;
+
 import controller.QuanLyController;
 import model.tbl_Phong;
 import java.io.IOException;
@@ -35,20 +36,19 @@ public final class JP_Phong extends javax.swing.JPanel {
     
     public JP_Phong() throws IOException {
         initComponents();
-        LayNguon();
+        LayNguon("");
+        KhoaMo(false);
     }
     
-    public void LayNguon() throws IOException {
+    public void LayNguon(String sMaPhong) throws IOException {
         tbl_Phong = (DefaultTableModel) tb_Phong.getModel();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-        arrPhong = QuanLyController.NguonPhong();
-        tbl_Phong.setRowCount(0);
+        arrPhong = QuanLyController.NguonPhong(sMaPhong);
+        tbl_Phong.setRowCount(0);                                               // set hàng về 0 để truyền dữ liệu mới
         arrPhong.forEach((KQ) -> {
             tbl_Phong.addRow(new Object[]{KQ.getMaPhong(), KQ.getLoaiPhong(),KQ.getSoGiuong(), KQ.getSoPhong(), KQ.getGiaPhong(), KQ.getTinhTrang(), KQ.getMoTa()});
         });
     }
-    
-    
     
     public void KhoaMo(boolean b) {
         txt_maphong.setEditable(b);
@@ -64,40 +64,31 @@ public final class JP_Phong extends javax.swing.JPanel {
         tb_Phong.setEnabled(!b);
     }
 
-    public void refresh(boolean b) {
-        txt_maphong.setEditable(b);
-        cbb_loaiphong.setEditable(b);
-        txt_sogiuong.setEditable(b);
-        txt_sophong.setEditable(b);
-        txt_giaphong.setEditable(b);
-        rdb_Empty.setSelected(false);
-        rdb_Full.setSelected(false);
-        bt_them.setEnabled(b);
-        bt_sua.setEnabled(b);
-        bt_xoa.setEnabled(b);
-        bt_ghi.setEnabled(b);
-        bt_khong.setEnabled(b);
-        tb_Phong.setEnabled(b);
-    }
-
     public void XoaTrang() {
-        txt_maphong.setText("");
-        cbb_loaiphong.setSelectedIndex(0);
-        txt_sogiuong.setText("");
-        txt_sophong.setText("");
-        txt_giaphong.setText("");
-        rdb_Empty.setSelected(false);
-        rdb_Full.setSelected(false);
-        txt_mota.setText("");
+        try {
+            txt_maphong.setText("");
+            cbb_loaiphong.setSelectedIndex(0);
+            txt_sogiuong.setText("");
+            txt_sophong.setText("");
+            txt_giaphong.setText("");
+            rdb_Empty.setSelected(false);
+            rdb_Full.setSelected(false);
+            txt_mota.setText("");
+            txt_timkiem.setText("");
+            LayNguon("");
+        } catch (IOException ex) {
+            Logger.getLogger(JP_Phong.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel4 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        txt_timkiem2 = new javax.swing.JTextField();
+        txt_timkiem = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -142,10 +133,12 @@ public final class JP_Phong extends javax.swing.JPanel {
         jPanel8.setRequestFocusEnabled(false);
         jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.TRAILING, 10, 20));
 
-        txt_timkiem2.setBackground(new java.awt.Color(123, 156, 225));
-        txt_timkiem2.setBorder(null);
-        txt_timkiem2.setPreferredSize(new java.awt.Dimension(200, 20));
-        jPanel8.add(txt_timkiem2);
+        txt_timkiem.setBackground(new java.awt.Color(123, 156, 225));
+        txt_timkiem.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txt_timkiem.setForeground(new java.awt.Color(255, 255, 255));
+        txt_timkiem.setBorder(null);
+        txt_timkiem.setPreferredSize(new java.awt.Dimension(200, 20));
+        jPanel8.add(txt_timkiem);
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search_25px.png"))); // NOI18N
@@ -177,7 +170,7 @@ public final class JP_Phong extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel2.setText("Mã Phòng:");
 
-        txt_maphong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txt_maphong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         txt_maphong.setMargin(new java.awt.Insets(0, 2, 0, 0));
         txt_maphong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,29 +182,30 @@ public final class JP_Phong extends javax.swing.JPanel {
         jLabel4.setText("Loại Phòng:");
 
         cbb_loaiphong.setBackground(new java.awt.Color(255, 255, 255));
-        cbb_loaiphong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cbb_loaiphong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         cbb_loaiphong.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phòng Thường", "Phòng Cao cấp", "Phòng VIP" }));
 
         jLabel9.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel9.setText("Số Giường:");
 
-        txt_sogiuong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txt_sogiuong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
-        jLabel10.setText("Số Phòng:");
+        jLabel10.setText("Số Buồng:");
 
-        txt_sophong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txt_sophong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel5.setText("Giá Phòng:");
 
-        txt_giaphong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txt_giaphong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel7.setText("Tình Trạng:");
 
         rdb_Full.setBackground(new java.awt.Color(255, 255, 255));
-        rdb_Full.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        buttonGroup1.add(rdb_Full);
+        rdb_Full.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         rdb_Full.setText("Full");
         rdb_Full.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,14 +214,15 @@ public final class JP_Phong extends javax.swing.JPanel {
         });
 
         rdb_Empty.setBackground(new java.awt.Color(255, 255, 255));
-        rdb_Empty.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        buttonGroup1.add(rdb_Empty);
+        rdb_Empty.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         rdb_Empty.setText("Empty");
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel6.setText("Mô Tả:");
 
         txt_mota.setColumns(20);
-        txt_mota.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txt_mota.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         txt_mota.setRows(5);
         jScrollPane2.setViewportView(txt_mota);
 
@@ -397,7 +392,7 @@ public final class JP_Phong extends javax.swing.JPanel {
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
-        tb_Phong.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        tb_Phong.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         tb_Phong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -478,15 +473,17 @@ public final class JP_Phong extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-
+        try {
+            LayNguon(txt_timkiem.getText());
+        } catch (IOException ex) {
+            Logger.getLogger(JP_Phong.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void txt_maphongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_maphongActionPerformed
-
     }//GEN-LAST:event_txt_maphongActionPerformed
 
     private void rdb_FullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdb_FullActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_rdb_FullActionPerformed
 
     private void bt_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_themActionPerformed
@@ -520,7 +517,7 @@ public final class JP_Phong extends javax.swing.JPanel {
                     QuanLyController.XoaPhong(macu);
                     XoaTrang();
                     try {
-                        LayNguon();
+                        LayNguon("");
                     } catch (IOException ex) {
                         Logger.getLogger(JP_KhachHang.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -550,15 +547,15 @@ public final class JP_Phong extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Bạn chưa chọn tình trạng hiện tại của phòng.", "Thông Báo", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
         if (QuanLyKhachSanController.KiemTraTrungMa("Phong", "MaPhong", txt_maphong.getText(), ktThem, macu) == true) {
-            JOptionPane.showMessageDialog(this, "Mã ngành đã tồn tại trong cơ sở dữ liệu.", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Đã có phòng này, hãy thêm phòng với mã mới!", "Thông Báo", JOptionPane.ERROR_MESSAGE);
             txt_maphong.requestFocus();
             return;
         }
-        maPhong = txt_maphong.getText();
+        else{
+            maPhong = txt_maphong.getText();
         loaiPhong = (String) cbb_loaiphong.getSelectedItem();
-        giaPhong=txt_giaphong.getText();
+        giaPhong = txt_giaphong.getText();
         sogiuong = txt_sogiuong.getText();
         sophong = txt_sophong.getText();
         if (rdb_Empty.isSelected()) {
@@ -570,19 +567,22 @@ public final class JP_Phong extends javax.swing.JPanel {
         tbl_Phong cn = new tbl_Phong(maPhong, loaiPhong,sogiuong,sophong, giaPhong, tinhTrang, moTa);
         if (ktThem == true) {
             QuanLyController.ThemPhong(cn);
+            JOptionPane.showMessageDialog(this, "Thành công", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
         } else {
             QuanLyController.CapNhatPhong(cn, macu);
         }
         try {
-            LayNguon();
+            LayNguon("");
         } catch (IOException ex) {
         }
         KhoaMo(false);
+        }
+        
     }//GEN-LAST:event_bt_ghiActionPerformed
 
     private void bt_khongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_khongActionPerformed
+        KhoaMo(false);
         XoaTrang();
-        refresh(true);
         ktThem = true;
     }//GEN-LAST:event_bt_khongActionPerformed
 
@@ -602,14 +602,13 @@ public final class JP_Phong extends javax.swing.JPanel {
         txt_sogiuong.setText(sogiuong);
         txt_sophong.setText(sophong);
         txt_giaphong.setText(giaPhong);
+        txt_mota.setText(moTa);
+        
         if (tinhTrang == "Trống") {
             rdb_Empty.setSelected(true);
-            rdb_Full.setSelected(false);
         } else {
-            rdb_Empty.setSelected(false);
             rdb_Full.setSelected(true);
         }
-        txt_mota.setText(moTa);
     }//GEN-LAST:event_tb_PhongMouseClicked
 
 
@@ -619,6 +618,7 @@ public final class JP_Phong extends javax.swing.JPanel {
     private javax.swing.JButton bt_sua;
     private javax.swing.JButton bt_them;
     private javax.swing.JButton bt_xoa;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbb_loaiphong;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -646,6 +646,6 @@ public final class JP_Phong extends javax.swing.JPanel {
     private javax.swing.JTextArea txt_mota;
     private javax.swing.JTextField txt_sogiuong;
     private javax.swing.JTextField txt_sophong;
-    private javax.swing.JTextField txt_timkiem2;
+    private javax.swing.JTextField txt_timkiem;
     // End of variables declaration//GEN-END:variables
 }

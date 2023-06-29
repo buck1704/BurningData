@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1140, 780]"/>
@@ -63,10 +67,16 @@
             <Property name="verticalGap" type="int" value="20"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txt_timkiem2">
+            <Component class="javax.swing.JTextField" name="txt_timkiem">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="e1" green="9c" red="7b" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -230,7 +240,7 @@
             <Component class="javax.swing.JTextField" name="txt_maphong">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="0"/>
+                  <Font name="Montserrat Medium" size="14" style="0"/>
                 </Property>
                 <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
                   <Insets value="[0, 2, 0, 0]"/>
@@ -254,7 +264,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="0"/>
+                  <Font name="Montserrat Medium" size="14" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -279,7 +289,7 @@
             <Component class="javax.swing.JTextField" name="txt_sogiuong">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="0"/>
+                  <Font name="Montserrat Medium" size="14" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -288,13 +298,13 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="11" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="S&#x1ed1; Ph&#xf2;ng:"/>
+                <Property name="text" type="java.lang.String" value="S&#x1ed1; Bu&#x1ed3;ng:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txt_sophong">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="0"/>
+                  <Font name="Montserrat Medium" size="14" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -309,7 +319,7 @@
             <Component class="javax.swing.JTextField" name="txt_giaphong">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="0"/>
+                  <Font name="Montserrat Medium" size="14" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -326,8 +336,11 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="0"/>
+                  <Font name="Montserrat Medium" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Full"/>
               </Properties>
@@ -340,8 +353,11 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="0"/>
+                  <Font name="Montserrat Medium" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Empty"/>
               </Properties>
@@ -365,7 +381,7 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Montserrat Medium" size="12" style="0"/>
+                      <Font name="Montserrat Medium" size="14" style="0"/>
                     </Property>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
@@ -568,7 +584,7 @@
             <Component class="javax.swing.JTable" name="tb_Phong">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Medium" size="12" style="0"/>
+                  <Font name="Montserrat Medium" size="14" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="7" rowCount="20">

@@ -34,7 +34,7 @@ public class DatPhongController {
             conn = DriverManager.getConnection(Hotel_Manager.dbURL);
             // Thực hiện truy vấn và lấy kết quả trả về
             sql = "Select MaPhong, LoaiPhong, LEFT(MaPhong,1) as Tang, TinhTrang From Phong";
-            
+
             sql = sql + " Order by MaPhong";
             state = conn.createStatement();
             ResultSet rs = state.executeQuery(sql);
@@ -122,14 +122,13 @@ public class DatPhongController {
             Logger.getLogger(HangHoaController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return arrHangHoa;
-
     }
 
     public static List<tbl_DichVu> NguonDichVu(String sMaKT) {
         List<tbl_DichVu> arrDichVu = new ArrayList<>();
         Statement state = null;
         try {
-            java.sql.Connection conn = DriverManager.getConnection(Hotel_Manager.dbURL);
+            conn = DriverManager.getConnection(Hotel_Manager.dbURL);
             // Thực hiện truy vấn và lấy kết quả trả về
             sql = "Select * From DichVu ";
             if (sMaKT != null && !sMaKT.equals("")) {
@@ -153,7 +152,7 @@ public class DatPhongController {
         }
         return arrDichVu;
     }
-    
+
     public static List<tbl_PhieuDatPhong> NguonPhieuDatPhong(String sMaKT) throws IOException {
         List<tbl_PhieuDatPhong> arrPhieuDatPhong = new ArrayList<>();
         Statement state = null;
@@ -161,7 +160,7 @@ public class DatPhongController {
             conn = DriverManager.getConnection(Hotel_Manager.dbURL);
             // Thực hiện truy vấn và lấy kết quả trả về
             sql = "Select * From phieudatphong";
-            if(sMaKT != null && !sMaKT.equals("")){
+            if (sMaKT != null && !sMaKT.equals("")) {
                 sql = sql + " Where MaPhieuDatPhong ='" + sMaKT + "'";
             }
             sql = sql + " order by MaPhieuDatPhong ";
@@ -183,7 +182,7 @@ public class DatPhongController {
             conn.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } 
+        }
         return arrPhieuDatPhong;
     }
 
@@ -285,18 +284,15 @@ public class DatPhongController {
         }
     }
 
-
     // Thêm dữ liệu cho cả bảng phieudichvu, phieusanpham;
     public static void ThemPhieuBonus(tbl_PhieuBonus bp, String MaLoaiPhieu, String tenBang, String dinhDangPhieu) throws SQLException {
         conn = null;
         PreparedStatement state = null;
         try {
             java.sql.Connection conn = DriverManager.getConnection(Hotel_Manager.dbURL);
-            // Lấy mã chức vụ lớn nhất trong CSDL
             String sql = "SELECT MAX(" + MaLoaiPhieu + ") FROM " + tenBang;
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery(sql);
-            // Lấy số thứ tự của mã chức vụ hiện tại
             int index = 0;
             if (rs.next()) {
                 String maxId = rs.getString(1);
@@ -407,6 +403,7 @@ public class DatPhongController {
             indexHD++;
             String newId = "HD" + String.format("%03d", indexHD);
             rs.close();
+            
             // Lấy ra phiếu dịch vụ mới thêm trước đó
             rs = getMaxIdPhieuDV.executeQuery();
             String maphieudichvu = null;
@@ -425,7 +422,7 @@ public class DatPhongController {
             insertdata.setString(3, maphieudichvu);
             insertdata.setString(4, maphieusanpham);
             insertdata.setString(5, bp.getNgayLap());
-            insertdata.setDouble(6, Double.valueOf(bp.getTongTien()));
+            insertdata.setDouble(6, Double.parseDouble(bp.getTongTien()));
             insertdata.setDouble(7, Double.parseDouble(bp.getTienCoc()));
             insertdata.execute();
             insertdata.close();
@@ -452,21 +449,20 @@ public class DatPhongController {
     }
 
     public static void CapNhatPhieuDatPhong(tbl_PhieuDatPhong bp, String mapdp, String maphongcu) {
-    conn = null;
+        conn = null;
         PreparedStatement state = null;
         try {
             java.sql.Connection conn = DriverManager.getConnection(Hotel_Manager.dbURL);
-            sql = "UPDATE Phong SET TinhTrang = CASE " +
-                                "WHEN MaPhong = ? THEN 0 " +
-                                "WHEN MaPhong = ? THEN 1 " +
-                                "ELSE TinhTrang END";
+            sql = "UPDATE Phong SET TinhTrang = CASE "
+                    + "WHEN MaPhong = ? THEN 0 "
+                    + "WHEN MaPhong = ? THEN 1 "
+                    + "ELSE TinhTrang END";
             state = conn.prepareStatement(sql);
             state.setString(1, maphongcu);
             state.setString(2, bp.getMaPhong());
-            
             state.execute();
- 
-            sql1="UPDATE PhieuDatPhong SET MaPhong = ?, ThanhTienP = DATEDIFF(NgayDi, NgayDen) * (SELECT GiaPhong FROM Phong WHERE MaPhong = ?)   WHERE MaPhieuDatPhong = ? AND MaPhong = ?";
+
+            sql1 = "UPDATE PhieuDatPhong SET MaPhong = ?, ThanhTienP = DATEDIFF(NgayDi, NgayDen) * (SELECT GiaPhong FROM Phong WHERE MaPhong = ?)   WHERE MaPhieuDatPhong = ? AND MaPhong = ?";
             state = conn.prepareStatement(sql1);
             state.setString(1, bp.getMaPhong());
             state.setString(2, bp.getMaPhong());
@@ -477,9 +473,9 @@ public class DatPhongController {
             conn.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } 
+        }
     }
-    
+
     public static void CapNhatPhong(tbl_Phong bp, String maphong) {
         conn = null;
         PreparedStatement state = null;
@@ -500,10 +496,11 @@ public class DatPhongController {
             conn.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } 
+        }
     }
-    public static String HienThiPhong(String mpm)  {
-       conn = null;
+
+    public static String HienThiPhong(String mpm) {
+        conn = null;
         PreparedStatement state = null;
         String tinhtrang = null;
         try {
@@ -513,12 +510,11 @@ public class DatPhongController {
             state.setString(1, mpm);
             ResultSet rs = (ResultSet) state.executeQuery();
             while (rs.next()) {
-                tinhtrang = rs.getString("TinhTrang"); 
+                tinhtrang = rs.getString("TinhTrang");
             }
-       
-    }catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
-        } 
+        }
         return tinhtrang;
-     }
+    }
 }

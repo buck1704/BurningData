@@ -1,6 +1,7 @@
 package view;
 
 import controller.HangHoaController;
+import controller.QuanLyController;
 import java.math.RoundingMode;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
@@ -8,10 +9,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import model.tbl_ChucVu;
 import model.tbl_HangHoa;
 import model.tbl_Nhaphanphoi;
 import model.tbl_NhapHang;
@@ -30,35 +33,31 @@ public class JP_NhapHang extends javax.swing.JPanel {
         ppmasp.add(panelmasp);
         ppncc.add(panelncc);
         updateDateTimeLabel();
-        LoadJListMaSP();
-        LoadJListNCC();
+        LoadComBoBoxMaSP();
+        LoadComBoBoxNCC();
         LoadArrayNhapHangListToTable();
         LoadArrayListToTable();
     }
 
-    public void LoadJListMaSP() {
-        DefaultListModel<String> listModel = new DefaultListModel<>();
-        List<tbl_HangHoa> hh = HangHoaController.LoadDataHangHoaToArrayList(m);
-        masp = txtmasp.getText().toLowerCase();
-        for (tbl_HangHoa o : hh) {
-            if (o.getTenhang().toLowerCase().contains(masp.toLowerCase())) {
-                listModel.addElement(o.getMahang() + "-" + o.getTenhang());
-            }
-        }
-        jlistmasp.setModel(listModel);
-
+    private DefaultComboBoxModel<String> comboBoxMaSP;
+    public void LoadComBoBoxMaSP() {
+        comboBoxMaSP = new DefaultComboBoxModel<>();
+        cbmasp.setModel(comboBoxMaSP);
+        List<tbl_HangHoa> hanghoa = HangHoaController.LoadDataHangHoaToArrayList(m);
+         for (tbl_HangHoa o : hanghoa) {
+            comboBoxMaSP.addElement(o.getMahang() + "-" + o.getTenhang());
+         }
     }
-
-    public void LoadJListNCC() {
-        DefaultListModel<String> listncc = new DefaultListModel<>();
-        List<tbl_Nhaphanphoi> ncc = HangHoaController.LoadDatanccToArrayList();
-        nhacungcap = txtncc.getText().toLowerCase();
-        for (tbl_Nhaphanphoi o : ncc) {
-            if (o.getTenct().toLowerCase().contains(nhacungcap)) {
-                listncc.addElement(o.getMact() + "-" + o.getTenct());
-            }
-        }
-        jlistncc.setModel(listncc);
+    
+    private DefaultComboBoxModel<String> comboBoxNCC;
+    public void LoadComBoBoxNCC() {
+        
+        comboBoxNCC = new DefaultComboBoxModel<>();
+        cbncc.setModel(comboBoxNCC);
+         List<tbl_Nhaphanphoi> ncc = HangHoaController.LoadDatanccToArrayList();
+         for (tbl_Nhaphanphoi o : ncc) {
+            comboBoxNCC.addElement(o.getMact() + "-" + o.getTenct());
+         }
     }
 
     public void KhoaMo(boolean b) {
@@ -81,8 +80,8 @@ public class JP_NhapHang extends javax.swing.JPanel {
     }
     
      public void refresh(boolean b) {
-        txtmasp.setEditable(b);
-        txtncc.setEditable(b);
+        cbmasp.setEditable(b);
+        cbncc.setEditable(b);
         txtsoluong.setEditable(b);
         txtloaihang.setEditable(b);
         txtmanhap.setEditable(b);
@@ -96,8 +95,8 @@ public class JP_NhapHang extends javax.swing.JPanel {
         btkhong.setEnabled(b);
     }
     public void XoaTrang() {
-        txtmasp.setText("");
-        txtncc.setText("");
+        cbmasp.setSelectedIndex(0);
+        cbncc.setSelectedIndex(0);
         cbdvt.setSelectedIndex(0);
         txtgianhap.setText("");
         txtsoluong.setText("");
@@ -123,9 +122,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         txtmanhap = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtmasp = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtncc = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtloaihang = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -136,6 +133,8 @@ public class JP_NhapHang extends javax.swing.JPanel {
         txtgianhap = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtngaynhap = new javax.swing.JLabel();
+        cbmasp = new javax.swing.JComboBox<>();
+        cbncc = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txttimkiem = new javax.swing.JTextField();
@@ -234,24 +233,10 @@ public class JP_NhapHang extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel2.setText("Mã sản phẩm:");
 
-        txtmasp.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtmasp.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtmaspKeyReleased(evt);
-            }
-        });
-
         jLabel4.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel4.setText("Nhà cung cấp:");
         jLabel4.setPreferredSize(new java.awt.Dimension(75, 14));
         jLabel4.setRequestFocusEnabled(false);
-
-        txtncc.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtncc.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtnccKeyReleased(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         jLabel8.setText("Loại Hàng:");
@@ -281,29 +266,44 @@ public class JP_NhapHang extends javax.swing.JPanel {
         txtngaynhap.setFont(new java.awt.Font("Montserrat", 0, 11)); // NOI18N
         txtngaynhap.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        cbmasp.setBackground(new java.awt.Color(255, 255, 255));
+        cbmasp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cbmasp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbmaspActionPerformed(evt);
+            }
+        });
+
+        cbncc.setBackground(new java.awt.Color(255, 255, 255));
+        cbncc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbnccActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+            .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtngaynhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtgianhap, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbdvt, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtsoluong, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtngaynhap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtmanhap)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
-                    .addComponent(txtmasp)
-                    .addComponent(txtncc)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtloaihang, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cbmasp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbncc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtloaihang)
+                    .addComponent(txtsoluong)
+                    .addComponent(cbdvt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtgianhap))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
@@ -316,12 +316,12 @@ public class JP_NhapHang extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(0, 0, 0)
-                .addComponent(txtmasp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addComponent(cbmasp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(txtncc, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cbncc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
                 .addComponent(jLabel8)
                 .addGap(0, 0, 0)
                 .addComponent(txtloaihang, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -604,31 +604,13 @@ public class JP_NhapHang extends javax.swing.JPanel {
 
     private void jlistmaspMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlistmaspMouseClicked
         // TODO add your handling code here:
-        int selectedIndex = jlistmasp.getSelectedIndex();//llaasy vị trí
-        String selectedValue = jlistmasp.getSelectedValue();//lấy giá trị
-        String[] values = selectedValue.split("-");//chia chuỗi
-        String mact = values[0];
-        txtmasp.setText(mact);
+  
     }//GEN-LAST:event_jlistmaspMouseClicked
 
     private void jlistnccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlistnccMouseClicked
         // TODO add your handling code here:
-        int selectedIndex = jlistncc.getSelectedIndex();//llaasy vị trí
-        String selectedValue = jlistncc.getSelectedValue();//lấy giá trị
-        String[] values = selectedValue.split("-");//chia chuỗi
-        String mact = values[0];
-        txtncc.setText(mact);
+     
     }//GEN-LAST:event_jlistnccMouseClicked
-
-    private void txtmaspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmaspKeyReleased
-        // TODO add your handling code here:
-        ppmasp.show(txtmasp, 0, txtmasp.getHeight());
-    }//GEN-LAST:event_txtmaspKeyReleased
-
-    private void txtnccKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnccKeyReleased
-        // TODO add your handling code here:
-        ppncc.show(txtncc, 0, txtncc.getHeight());
-    }//GEN-LAST:event_txtnccKeyReleased
 
     private void bttimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttimkiemActionPerformed
         // TODO add your handling code here:
@@ -645,13 +627,11 @@ public class JP_NhapHang extends javax.swing.JPanel {
 
     private void btsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsuaActionPerformed
         // TODO add your handling code here:
-        if (txtmasp.getText().length() <= 0) {
-            return;
-        }
+        
         ktThem = false;
         mcnh = txtmanhap.getText();
-        mcsp = txtmasp.getText();
-        mcncc = txtncc.getText();
+        mcsp = (String) cbmasp.getSelectedItem();
+        mcncc =(String) cbncc.getSelectedItem();
 
         txtmanhap.setEnabled(false);
         KhoaMo(true);
@@ -661,8 +641,8 @@ public class JP_NhapHang extends javax.swing.JPanel {
         // TODO add your handling code here:
         ktxoa = true;
         mcnh = txtmanhap.getText();
-        mcsp = txtmasp.getText();
-        mcncc = txtncc.getText();
+        mcsp = (String) cbmasp.getSelectedItem();
+        mcncc =(String) cbncc.getSelectedItem();
         KhoaMo(true);
     }//GEN-LAST:event_btxoaActionPerformed
 
@@ -673,34 +653,17 @@ public class JP_NhapHang extends javax.swing.JPanel {
             txtmanhap.requestFocus();
             return;
         }
-        if (txtmasp.getText().length() <= 0) {
-            JOptionPane.showMessageDialog(this, "Bạn chưa nhập mã sản phẩm", "Thông Báo", JOptionPane.ERROR_MESSAGE);
-            txtmasp.requestFocus();
-            return;
-        }
-        if (txtncc.getText().length() <= 0) {
-            JOptionPane.showMessageDialog(this, "Bạn chưa nhập nhà cung cấp", "Thông Báo", JOptionPane.ERROR_MESSAGE);
-            txtncc.requestFocus();
-            return;
-        }
+        nhacungcap = (String) cbncc.getSelectedItem();
+        masp = (String) cbmasp.getSelectedItem();
         if (HangHoaController.KiemTraTrungMa("nhaphang", "MaNhapHang", txtmanhap.getText(), ktThem, mcnh) == true) {
             JOptionPane.showMessageDialog(this, "Mã Nhập Hàng đã tồn tại ", "Thông Báo", JOptionPane.ERROR_MESSAGE);
             txtmanhap.requestFocus();
             return;
         }
-        if (HangHoaController.KiemTraTrungMa("mathang", "MaHang", txtmasp.getText(), ktThem, m) == false) {
-            JOptionPane.showMessageDialog(this, "Mã Hàng không tồn tại ", "Thông Báo", JOptionPane.ERROR_MESSAGE);
-            txtmasp.requestFocus();
-            return;
-        }
-        if (HangHoaController.KiemTraTrungMa("nhacungcap", "MaCongTy", txtncc.getText(), ktThem, m) == false) {
-            JOptionPane.showMessageDialog(this, "Mã Công Ty không  tồn tại ", "Thông Báo", JOptionPane.ERROR_MESSAGE);
-            txtncc.requestFocus();
-            return;
-        }
+      
         manhap = txtmanhap.getText();
-        masp = txtmasp.getText();
-        nhacungcap = txtncc.getText();
+        masp = (String) cbmasp.getSelectedItem();
+        nhacungcap = (String) cbncc.getSelectedItem();
         ngaynhap = txtngaynhap.getText();
         loaihang = txtloaihang.getText();
         soluong = Integer.parseInt(txtsoluong.getText());
@@ -708,7 +671,12 @@ public class JP_NhapHang extends javax.swing.JPanel {
         gianhap=txtgianhap.getText() ;
 
         tbl_NhapHang nh = new tbl_NhapHang(manhap, masp, nhacungcap, soluong, loaihang, dvt, gianhap, ngaynhap);
-
+        String giabanhh=HangHoaController.LayGiaBan( masp);
+        int giaban = Integer.parseInt(giabanhh);
+        int gianhapp = Integer.parseInt(gianhap);
+        if(giaban < gianhapp){
+             JOptionPane.showMessageDialog(this, "Giá Nhập lớn hơn Giá Bán  ", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+        }
         if (ktThem == true) {
             try {
                 HangHoaController.NhapHangHoa(nh);
@@ -737,7 +705,7 @@ public class JP_NhapHang extends javax.swing.JPanel {
 
                     } else {
                         JOptionPane.showConfirmDialog(this, "Không tìm thấy kết quả!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                        txtmasp.requestFocus();
+                        cbmasp.requestFocus();
                     }
                 }
             }
@@ -773,14 +741,53 @@ public class JP_NhapHang extends javax.swing.JPanel {
         ngaynhap = model.getValueAt(index, 7).toString();
 
         txtmanhap.setText(manhap);
-        txtmasp.setText(masp);
-        txtncc.setText(nhacungcap);
         txtloaihang.setText(loaihang);
         txtsoluong.setText(String.valueOf(soluong));
         cbdvt.setSelectedItem(dvt);
         txtgianhap.setText(gianhap);
         txtngaynhap.setText(ngaynhap);
+           
+        int itemCount = comboBoxMaSP.getSize();
+        for (int i = 0; i < itemCount; i++) {
+        String selectedValue = comboBoxMaSP.getElementAt(i);
+        String[] values = selectedValue.split("-");
+        String msp = values[0];
+        
+        if (msp.equalsIgnoreCase(masp)) {
+            comboBoxMaSP.setSelectedItem(msp);
+            break;
+        }
+        
+       
+         int itemNcc = comboBoxNCC.getSize();
+        for (int n = 0; i < itemNcc; n++) {
+        String selectedValueNCC = comboBoxNCC.getElementAt(n);
+        String[] valuencc = selectedValueNCC.split("-");
+        String ncc = valuencc[0];
+        
+        if (ncc.equalsIgnoreCase(nhacungcap)) {
+            comboBoxNCC.setSelectedItem(msp);
+            break;
+                }
+            }
+        }
     }//GEN-LAST:event_tbnhaphangMouseClicked
+
+    private void cbmaspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmaspActionPerformed
+        // TODO add your handling code here:
+         String selectedValue = (String) comboBoxMaSP.getSelectedItem(); // Lấy giá trị
+         String[] values = selectedValue.split("-"); // Chia chuỗi
+         String masp = values[0];
+         comboBoxMaSP.setSelectedItem(masp);
+    }//GEN-LAST:event_cbmaspActionPerformed
+
+    private void cbnccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbnccActionPerformed
+        // TODO add your handling code here:
+        String selectedValue = (String) comboBoxNCC.getSelectedItem(); // Lấy giá trị
+        String[] values = selectedValue.split("-"); // Chia chuỗi
+        String ncc = values[0];
+        comboBoxNCC.setSelectedItem(ncc);
+    }//GEN-LAST:event_cbnccActionPerformed
 
     public void LoadArrayNhapHangListToTable() {
         list = HangHoaController.LoadDataNhapHangToArrayList(timkiem);
@@ -816,6 +823,8 @@ public class JP_NhapHang extends javax.swing.JPanel {
     private javax.swing.JButton bttimkiem;
     private javax.swing.JButton btxoa;
     private javax.swing.JComboBox<String> cbdvt;
+    private javax.swing.JComboBox<String> cbmasp;
+    private javax.swing.JComboBox<String> cbncc;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -851,8 +860,6 @@ public class JP_NhapHang extends javax.swing.JPanel {
     private javax.swing.JTextField txtgianhap;
     private javax.swing.JTextField txtloaihang;
     private javax.swing.JTextField txtmanhap;
-    private javax.swing.JTextField txtmasp;
-    private javax.swing.JTextField txtncc;
     private javax.swing.JLabel txtngaynhap;
     private javax.swing.JTextField txtsoluong;
     private javax.swing.JTextField txttimkiem;

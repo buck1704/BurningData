@@ -21,6 +21,7 @@ public final class JP_DichVu extends javax.swing.JPanel {
     private static String MaDichVu, TenDichVu, GiaDichVu;
     public JP_DichVu() throws IOException, IOException {
         initComponents();
+        KhoaMo(false);
         LayNguon();
     }
     public void LayNguon() throws IOException {
@@ -433,7 +434,7 @@ public final class JP_DichVu extends javax.swing.JPanel {
     private void bt_khongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_khongActionPerformed
         // TODO add your handling code here:
         XoaTrang();
-        refresh(true);
+        KhoaMo(false);
         ktThem = true;
     }//GEN-LAST:event_bt_khongActionPerformed
 

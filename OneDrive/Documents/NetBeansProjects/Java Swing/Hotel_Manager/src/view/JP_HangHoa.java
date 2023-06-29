@@ -1,12 +1,8 @@
 package view;
 
 import controller.HangHoaController;
-import java.math.RoundingMode;
-import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -28,6 +24,7 @@ public class JP_HangHoa extends javax.swing.JPanel {
     public JP_HangHoa() {
         initComponents();
         LoadArrayListToTable();
+        KhoaMo(false);
         menu.add(panel);
         LoadJList();
         timkiem = "";
@@ -69,7 +66,6 @@ public class JP_HangHoa extends javax.swing.JPanel {
         btxoa.setEnabled(!b);
         btghi.setEnabled(b);
         btkhong.setEnabled(b);
-     
     }
 
     public void refresh(boolean b) {
@@ -582,9 +578,17 @@ public class JP_HangHoa extends javax.swing.JPanel {
         loaihang = txtloaihang.getText();
         soluong = Integer.parseInt(txtsoluong.getText());
         donvitinh = (String) cbdvt.getSelectedItem();
+        
         gianhap = txtgianhap.getText();
         giaban = txtgiaban.getText();
         
+        double giaNhap = Double.parseDouble(gianhap);
+        double giaBan = Double.parseDouble(giaban);
+        if (giaNhap >= giaBan) {
+            JOptionPane.showMessageDialog(this, "Giá nhập phải nhỏ hơn giá bán.", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+            txtgianhap.requestFocus();
+            return;
+        }
         tbl_HangHoa hh = new tbl_HangHoa(mahang, tenhang, macongty, loaihang, String.valueOf(soluong), donvitinh, gianhap, giaban);
         if (ktThem == true) {
             HangHoaController.ThemHangHoa(hh);
@@ -600,7 +604,7 @@ public class JP_HangHoa extends javax.swing.JPanel {
     private void btkhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btkhongActionPerformed
         // TODO add your handling code here:
         XoaTrang();
-        refresh(true);
+        KhoaMo(false);
         ktThem = true;
     }//GEN-LAST:event_btkhongActionPerformed
 

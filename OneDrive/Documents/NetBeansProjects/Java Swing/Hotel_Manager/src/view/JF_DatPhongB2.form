@@ -157,7 +157,7 @@
                       <Font name="Montserrat Medium" size="12" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="3" rowCount="8">
+                      <Table columnCount="3" rowCount="0">
                         <Column editable="false" title="ID" type="java.lang.Object"/>
                         <Column editable="false" title="D&#x1ecb;ch V&#x1ee5;" type="java.lang.Object"/>
                         <Column editable="false" title="Gi&#xe1;" type="java.lang.Object"/>
@@ -180,7 +180,7 @@
                         <Column maxWidth="-1" minWidth="-1" prefWidth="20" resizable="true">
                           <Title/>
                           <Editor/>
-                          <Renderer editor="org.netbeans.modules.form.RADConnectionPropertyEditor"/>
+                          <Renderer/>
                         </Column>
                       </TableColumnModel>
                     </Property>
@@ -242,7 +242,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="button1" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="btn_hoanthanh" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -280,7 +280,7 @@
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="txt_b2_tiencoc" min="-2" pref="27" max="-2" attributes="0"/>
                       <EmptySpace pref="8" max="32767" attributes="0"/>
-                      <Component id="button1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_hoanthanh" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -361,7 +361,7 @@
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
-            <Component class="container.Button" name="button1">
+            <Component class="container.Button" name="btn_hoanthanh">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ho&#xe0;n Th&#xe0;nh"/>
                 <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -369,7 +369,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_hoanthanhActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -455,7 +455,7 @@
                       <Font name="Montserrat Medium" size="12" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="8">
+                      <Table columnCount="4" rowCount="0">
                         <Column editable="false" title="ID" type="java.lang.Object"/>
                         <Column editable="false" title="T&#xea;n" type="java.lang.Object"/>
                         <Column editable="false" title="S&#x1ed1; L&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
@@ -467,7 +467,7 @@
                         <Column maxWidth="-1" minWidth="-1" prefWidth="30" resizable="true">
                           <Title/>
                           <Editor/>
-                          <Renderer editor="org.netbeans.modules.form.RADConnectionPropertyEditor"/>
+                          <Renderer/>
                         </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="true">
                           <Title/>
@@ -586,7 +586,7 @@
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                      <TableColumnModel selectionModel="1">
+                      <TableColumnModel selectionModel="0">
                         <Column maxWidth="-1" minWidth="-1" prefWidth="30" resizable="true">
                           <Title/>
                           <Editor/>
@@ -608,7 +608,6 @@
                         </Column>
                       </TableColumnModel>
                     </Property>
-                    <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                     <Property name="rowHeight" type="int" value="22"/>
                     <Property name="rowMargin" type="int" value="5"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -640,19 +639,6 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabel28" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jLabel30" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel34" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lb_b2_madv" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lb_b2_tendv" max="32767" attributes="0"/>
-                                      <Component id="lb_b2_giadv" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="txt_b2_timkiemdv" min="-2" pref="209" max="-2" attributes="0"/>
@@ -663,15 +649,33 @@
                                       </Group>
                                       <Component id="jLabel14" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace pref="14" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="btn_b2_themdv" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jLabel28" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="jLabel30" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel34" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="lb_tendv" alignment="0" pref="165" max="32767" attributes="0"/>
+                                                  <Component id="lb_madv" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="lb_giadv" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="btn_themdv" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -689,20 +693,20 @@
                           <EmptySpace type="unrelated" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel28" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="lb_b2_madv" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="lb_madv" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel30" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="lb_b2_tendv" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="lb_tendv" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel34" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="lb_b2_giadv" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="lb_giadv" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                          <Component id="btn_b2_themdv" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_themdv" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -764,7 +768,7 @@
                     <Property name="text" type="java.lang.String" value="Gi&#xe1;:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lb_b2_madv">
+                <Component class="javax.swing.JLabel" name="lb_madv">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat Medium" size="14" style="1"/>
@@ -772,7 +776,7 @@
                     <Property name="horizontalAlignment" type="int" value="4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lb_b2_tendv">
+                <Component class="javax.swing.JLabel" name="lb_tendv">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat Medium" size="14" style="1"/>
@@ -780,7 +784,7 @@
                     <Property name="horizontalAlignment" type="int" value="4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lb_b2_giadv">
+                <Component class="javax.swing.JLabel" name="lb_giadv">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat Medium" size="16" style="3"/>
@@ -788,7 +792,7 @@
                     <Property name="horizontalAlignment" type="int" value="4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_b2_themdv">
+                <Component class="javax.swing.JButton" name="btn_themdv">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat Medium" size="12" style="0"/>
@@ -796,8 +800,8 @@
                     <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_b2_themdvMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_b2_themdvActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_themdvMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_themdvActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -872,7 +876,7 @@
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                      <TableColumnModel selectionModel="1">
+                      <TableColumnModel selectionModel="0">
                         <Column maxWidth="-1" minWidth="-1" prefWidth="35" resizable="true">
                           <Title/>
                           <Editor/>
@@ -901,7 +905,6 @@
                         </Column>
                       </TableColumnModel>
                     </Property>
-                    <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                     <Property name="rowHeight" type="int" value="22"/>
                     <Property name="rowMargin" type="int" value="5"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -937,7 +940,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="btn_giamsoluong" min="-2" pref="29" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txt_b2_soluongsp" min="-2" pref="68" max="-2" attributes="0"/>
+                                  <Component id="txt_soluongsp" min="-2" pref="68" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btn_themsoluong" min="-2" pref="29" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -962,8 +965,8 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lb_b2_tensp" max="32767" attributes="0"/>
-                                      <Component id="lb_b2_masp" max="32767" attributes="0"/>
+                                      <Component id="lb_tensp" max="32767" attributes="0"/>
+                                      <Component id="lb_masp" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -972,11 +975,6 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="btn_hoanthanh" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -994,18 +992,18 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel44" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="lb_b2_masp" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="lb_masp" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel43" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="lb_b2_tensp" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="lb_tensp" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btn_themsoluong" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="jLabel45" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="txt_b2_soluongsp" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_soluongsp" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_giamsoluong" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1015,9 +1013,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btn_b2_themsp" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="48" max="32767" attributes="0"/>
-                          <Component id="btn_hoanthanh" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          <EmptySpace pref="142" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1070,7 +1066,7 @@
                     <Property name="text" type="java.lang.String" value="T&#xea;n S&#x1ea3;n Ph&#x1ea9;m:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lb_b2_masp">
+                <Component class="javax.swing.JLabel" name="lb_masp">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat SemiBold" size="14" style="1"/>
@@ -1078,7 +1074,7 @@
                     <Property name="horizontalAlignment" type="int" value="4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lb_b2_tensp">
+                <Component class="javax.swing.JLabel" name="lb_tensp">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat SemiBold" size="14" style="1"/>
@@ -1086,7 +1082,7 @@
                     <Property name="horizontalAlignment" type="int" value="4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_b2_soluongsp">
+                <Component class="javax.swing.JTextField" name="txt_soluongsp">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Century" size="14" style="1"/>
@@ -1098,7 +1094,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_b2_soluongspFocusLost"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_soluongspFocusLost"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="btn_themsoluong">
@@ -1157,14 +1153,6 @@
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_b2_themspMouseClicked"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_b2_themspActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btn_hoanthanh">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Ho&#xe0;n Th&#xe0;nh"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_hoanthanhActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

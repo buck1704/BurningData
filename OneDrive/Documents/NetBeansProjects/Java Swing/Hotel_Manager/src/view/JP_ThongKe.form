@@ -457,6 +457,9 @@
                               <Dimension value="[180, 23]"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdb_thang3ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="rdb_thang4">
                           <Properties>

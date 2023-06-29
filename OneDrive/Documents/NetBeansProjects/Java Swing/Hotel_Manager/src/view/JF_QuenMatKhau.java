@@ -198,7 +198,7 @@ public class JF_QuenMatKhau extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Hotel App");
+        jLabel10.setText("Sunshine Boutique Hotel");
         jLabel10.setPreferredSize(new java.awt.Dimension(400, 25));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

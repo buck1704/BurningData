@@ -422,4 +422,25 @@ public class HangHoaController {
             }
         }
     }
+    public static String LayGiaBan(String mahang) {
+         PreparedStatement state = null;
+         String giaban = "";
+
+         try {
+             java.sql.Connection conn = DriverManager.getConnection(dbURL);
+             String sql = "SELECT GiaBan FROM mathang WHERE MaHang=?";
+             state = conn.prepareStatement(sql);
+             state.setString(1, mahang);
+
+             ResultSet rs = state.executeQuery();
+             while (rs.next()) {
+                 giaban = rs.getString("GiaBan");
+             }
+         } catch (SQLException ex) {
+             ex.printStackTrace();
+             // throw new SQLException("Lỗi khi cập nhật sản phẩm");
+         }
+
+         return giaban;
+     }
 }

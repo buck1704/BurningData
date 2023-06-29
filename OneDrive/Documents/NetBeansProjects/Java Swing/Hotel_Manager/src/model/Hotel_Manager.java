@@ -9,7 +9,14 @@ import java.util.logging.Logger;
 import javax.swing.*;
 
 public class Hotel_Manager {
-    // Cách 1: sử dụng xampp
+    // Cách 1: sử dụng sql server    
+    public static String dbURL = "jdbc:sqlserver://localhost; databaseName = hotel_manager; user = sa; password = sa; encrypt = false";
+    public static String sTenDN, sMaNhanVien, sMatKhau;
+    public static void main(String[] args) {
+        JFrame login = new JF_DangNhap();
+        login.setVisible(true);
+    
+    // Cách 2: sử dụng xampp
 //    public static String sTenDN, sMaNhanVien, sMatKhau , sTenNhanVien, sMaChucVu, sGioiTinh, sNgaySinh, sSDT,sDiaChi, sLuong;
 //    public static String dbURL;
 //    
@@ -28,12 +35,7 @@ public class Hotel_Manager {
 //            
 //    }
     
- // Cách 2: sử dụng sql server    
-    public static String dbURL = "jdbc:sqlserver://localhost; databaseName=hotel_manager; user=sa; password=sa; encrypt = false";
-    public static String sTenDN, sMaNhanVien, sMatKhau;
-    public static void main(String[] args) {
-        JFrame login = new JF_DangNhap();
-        login.setVisible(true);
+ 
     }
 }
     

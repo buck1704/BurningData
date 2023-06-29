@@ -41,7 +41,6 @@ public final class JP_ChucVu extends javax.swing.JPanel {
         tbl_ChucVu.setRowCount(0);
         arrChucVu.forEach((KQ) -> {
             tbl_ChucVu.addRow(new Object[]{KQ.getMaChucVu(), KQ.getTenChucVu(), KQ.getLuongTheoNgay()});
-
         });
     }
 

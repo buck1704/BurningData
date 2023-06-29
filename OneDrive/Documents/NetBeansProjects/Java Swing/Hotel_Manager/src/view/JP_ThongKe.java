@@ -19,8 +19,10 @@ public final class JP_ThongKe extends javax.swing.JPanel {
     ArrayList<tbl_Phong> arrDoanhThuPhong = new ArrayList<>();
     ArrayList<tbl_HangHoa> arrDoanhThuSanPham = new ArrayList<>();
     ArrayList<tbl_DichVu> arrDoanhThuDichVu = new ArrayList<>();
+    DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
     
     String SXTHEOTHANG = "1", SXPhong_ThuTu = "DESC", SXSanPham_ThuTu = "DESC", SXDichVu_ThuTu = "DESC";
+    
     public JP_ThongKe() throws IOException {
         initComponents();
         TongDoanhThu();
@@ -76,7 +78,6 @@ public final class JP_ThongKe extends javax.swing.JPanel {
                 }
             }
         }
-        DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
         lb_sldv.setText(decimalFormat.format(sldv));
         lb_dtdv.setText(decimalFormat.format(dtdv));
         lb_slsp.setText(decimalFormat.format(slsp));
@@ -99,7 +100,7 @@ public final class JP_ThongKe extends javax.swing.JPanel {
             double value = Double.parseDouble(tb_phong.getValueAt(row, 4).toString());
             sum += value;
         }
-        DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
+        
         lb_phong_tongdoanhthu.setText(decimalFormat.format(sum));
     }
     
@@ -116,7 +117,6 @@ public final class JP_ThongKe extends javax.swing.JPanel {
             double value = Double.parseDouble(tb_sanpham.getValueAt(row, 5).toString());
             sum += value;
         }
-        DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
         lb_sanpham_tongdoanhthu.setText(decimalFormat.format(sum));
     }
     
@@ -132,7 +132,6 @@ public final class JP_ThongKe extends javax.swing.JPanel {
             double value = Double.parseDouble(tb_dichvu.getValueAt(row, 3).toString());
             sum += value;
         }
-        DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
         lb_dichvu_tongdoanhthu.setText(decimalFormat.format(sum));
     }
     
@@ -420,6 +419,11 @@ public final class JP_ThongKe extends javax.swing.JPanel {
         rdb_thang3.setText("Tháng 3");
         rdb_thang3.setMargin(new java.awt.Insets(2, 7, 2, 2));
         rdb_thang3.setPreferredSize(new java.awt.Dimension(180, 23));
+        rdb_thang3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdb_thang3ActionPerformed(evt);
+            }
+        });
         jPanel5.add(rdb_thang3);
 
         rdb_thang4.setBackground(new java.awt.Color(255, 255, 255));
@@ -1456,7 +1460,7 @@ public final class JP_ThongKe extends javax.swing.JPanel {
             DoanhThuSanPham(SXTHEOTHANG, SXSanPham_ThuTu);
         } catch (IOException ex) {
             Logger.getLogger(JP_ThongKe.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }//GEN-LAST:event_rdb_sp_thang12ActionPerformed
 
     private void rdb_thang6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdb_thang6ActionPerformed
@@ -1575,6 +1579,15 @@ public final class JP_ThongKe extends javax.swing.JPanel {
             Logger.getLogger(JP_ThongKe.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_rdb_dv_thang12ActionPerformed
+
+    private void rdb_thang3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdb_thang3ActionPerformed
+        SXTHEOTHANG = "3";
+        try {
+            DoanhThuPhong(SXTHEOTHANG, SXPhong_ThuTu);
+        } catch (IOException ex) {
+            Logger.getLogger(JP_ThongKe.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_rdb_thang3ActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

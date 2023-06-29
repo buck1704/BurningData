@@ -11,12 +11,13 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.tbl_HoaDon;
+import model.tbl_PhieuBonus;
 import model.tbl_PhieuDatPhong;
 
 
 public final class JDiaLog_DatPhong extends javax.swing.JFrame {
     
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // Định dạng ngày tháng
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     DecimalFormat decimalFormat = new DecimalFormat("#,### VND");
     Date ngayHienTai = new Date();
     public JDiaLog_DatPhong() {
@@ -24,9 +25,7 @@ public final class JDiaLog_DatPhong extends javax.swing.JFrame {
         setTextforlable();
     }
     
-    
     public void setTextforlable(){
-        
         String tongTienFomat = decimalFormat.format(Double.parseDouble(JP_DatPhong.tinhTien));
         
         lb_maphieu.setText(JP_DatPhong.maPhieuDk);
@@ -345,12 +344,11 @@ public final class JDiaLog_DatPhong extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_backActionPerformed
 
     private void btn_confActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_confActionPerformed
-         try {
+        try {
         tbl_PhieuDatPhong cnP = new tbl_PhieuDatPhong(JP_DatPhong.maPhieuDk, JP_DatPhong.makh, dateFormat.format(JP_DatPhong.ngayDen),
                 dateFormat.format(JP_DatPhong.ngayDi), JP_DatPhong.maPhong, JP_DatPhong.tinhTien, JP_DatPhong.laymanhanvien);
         boolean success = DatPhongController.ThemPhieuDatPhong(cnP);
         if (success) {
-            JOptionPane.showMessageDialog(null, "Thêm phiếu đặt phòng thành công!");
             int option = JOptionPane.showConfirmDialog(null, "Bạn có muốn đăng ký dịch vụ tiếp không?", "Tiếp tục đăng ký dịch vụ", JOptionPane.YES_NO_OPTION);
             if (option == JOptionPane.YES_OPTION) {
                 JFrame JF_DatPhong;
@@ -362,10 +360,14 @@ public final class JDiaLog_DatPhong extends javax.swing.JFrame {
                 double tienCoc = Double.parseDouble(input);
                 double tienphong = Double.parseDouble(JP_DatPhong.tinhTien);
                 double tienCocMin = tienphong * 0.1;
-                if (tienCoc >= tienCocMin && tienCoc < tienphong) {
+                if (tienCoc >= tienCocMin && tienCoc <= tienphong) {
                     tbl_HoaDon cnhd = new tbl_HoaDon("", JP_DatPhong.maPhieuDk, "", "", dateFormat.format(ngayHienTai), 
                             JP_DatPhong.tinhTien, String.valueOf(tienCoc));
                     DatPhongController.ThemHoaDon(cnhd);
+                    tbl_PhieuBonus dv = new tbl_PhieuBonus("", JP_DatPhong.maPhieuDk, "0");
+                    DatPhongController.ThemPhieuBonus(dv, "MaPhieuDichVu", "PhieuDichVu", "PDV");
+                    tbl_PhieuBonus sp = new tbl_PhieuBonus("", JP_DatPhong.maPhieuDk, "0");
+                    DatPhongController.ThemPhieuBonus(sp, "MaPhieuSanPham", "PhieuSanPham", "PSP");
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Tiền cọc tối thiểu phải lớn hơn 10% của tiền phòng!!!");

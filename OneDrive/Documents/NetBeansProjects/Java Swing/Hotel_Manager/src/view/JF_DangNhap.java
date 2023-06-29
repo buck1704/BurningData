@@ -1,7 +1,6 @@
 package view;
+
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.*;
 import java.sql.DriverManager;
@@ -17,8 +16,7 @@ public class JF_DangNhap extends javax.swing.JFrame {
     public JF_DangNhap() {
         initComponents();
         this.setLocationRelativeTo(null);
-        ckb_hienthimatkhau.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
+        ckb_hienthimatkhau.addActionListener((ActionEvent e) -> {
             JCheckBox chk = (JCheckBox) e.getSource();
             if (chk.isSelected()) {
                 // Hiển thị mật khẩu
@@ -29,8 +27,7 @@ public class JF_DangNhap extends javax.swing.JFrame {
                 txt_MatKhau.setEchoChar('*');
                 ckb_hienthimatkhau.setText("Hide Password");
             }
-        }
-    });
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -197,7 +194,7 @@ public class JF_DangNhap extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setFont(new java.awt.Font("Montserrat", 0, 30)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Hotel App");
+        jLabel8.setText("Sunshine Boutique");
         jLabel8.setPreferredSize(new java.awt.Dimension(400, 25));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -239,7 +236,7 @@ public class JF_DangNhap extends javax.swing.JFrame {
 
     private void bt_DangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_DangNhapActionPerformed
         try (Connection conn = DriverManager.getConnection(Hotel_Manager.dbURL);
-            PreparedStatement psNV = conn.prepareStatement("SELECT taikhoan, matkhau, manhanvien FROM taikhoan WHERE taikhoan = ? AND matkhau = ? AND LEFT(MaNhanVien, 2) = 'NV'"); 
+            PreparedStatement psNV = conn.prepareStatement("SELECT taikhoan, matkhau, nhanvien.manhanvien, tennhanvien,nhanvien.MaChucVu, gioitinh, ngaysinh, sdt, diachi, luongtheongay FROM taikhoan,nhanvien, chucvu WHERE taikhoan = ? AND matkhau = ? AND LEFT(taikhoan.MaNhanVien, 2) = 'NV' and  taikhoan.MaNhanVien= nhanvien.MaNhanVien and chucvu.MaChucVu=nhanvien.MaChucVu"); 
             PreparedStatement psQL = conn.prepareStatement("SELECT taikhoan, matkhau, manhanvien FROM taikhoan WHERE taikhoan = ? AND matkhau = ? AND LEFT(MaNhanVien, 2) = 'QL'")) {
             String UN = txt_TaiKhoan.getText();
             String PW = txt_MatKhau.getText();
@@ -253,15 +250,22 @@ public class JF_DangNhap extends javax.swing.JFrame {
             if (rsNV.next()) {
                 Hotel_Manager.sTenDN = rsNV.getString("taikhoan");
                 Hotel_Manager.sMatKhau = rsNV.getString("matkhau");
-                Hotel_Manager.sMaNhanVien = rsNV.getString("manhanvien");
-                JP_DatPhong.laymanhanvien = Hotel_Manager.sMaNhanVien;
+                
+                JP_DatPhong.laymanhanvien = rsNV.getString("manhanvien");
+                
+                JF_AboutMe.laymanhanvien = rsNV.getString("manhanvien");
+                JF_AboutMe.laytennv = rsNV.getString("tennhanvien");
+                JF_AboutMe.laymacv = rsNV.getString("machucvu");
+                JF_AboutMe.laygioitinh = rsNV.getString("gioitinh");
+                JF_AboutMe.layngaysinh = rsNV.getString("ngaysinh");
+                JF_AboutMe.laysodienthoai = rsNV.getString("sdt");
+                JF_AboutMe.laydiachi = rsNV.getString("diachi");
+                JF_AboutMe.layluong = rsNV.getString("luongtheongay");
                 dispose();
                 JOptionPane.showMessageDialog(this, "Đăng nhập thành công.", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 // tự động đóng thông báo sau 3 giây
-                Timer timer = new Timer(3000, new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        JOptionPane.getRootFrame().dispose();
-                    }
+                Timer timer = new Timer(3000, (ActionEvent e) -> {
+                    JOptionPane.getRootFrame().dispose();
                 });
                 timer.setRepeats(false);
                 timer.start();
@@ -269,17 +273,19 @@ public class JF_DangNhap extends javax.swing.JFrame {
                 jf_Main.setLocationRelativeTo(null);
                 jf_Main.setVisible(true); // Hiển thị JFrame chính
             } else if (rsQL.next()) {
-                Hotel_Manager.sTenDN = rsQL.getString("taikhoan");
-                Hotel_Manager.sMatKhau = rsQL.getString("matkhau");
-                Hotel_Manager.sMaNhanVien = rsQL.getString("manhanvien");
-                JP_DatPhong.laymanhanvien = Hotel_Manager.sMaNhanVien;
+                JF_AboutMe.laymanhanvien = Hotel_Manager.sMaNhanVien;
+                JF_AboutMe.laytennv = rsNV.getString("tennhanvien");
+                JF_AboutMe.laymacv = rsNV.getString("machucvu");
+                JF_AboutMe.laygioitinh = rsNV.getString("gioitinh");
+                JF_AboutMe.layngaysinh = rsNV.getString("ngaysinh");
+                JF_AboutMe.laysodienthoai = rsNV.getString("sdt");
+                JF_AboutMe.laydiachi = rsNV.getString("diachi");
+                JF_AboutMe.layluong = rsNV.getString("luongtheongay");
                 dispose();
                 JOptionPane.showMessageDialog(this, "Đăng nhập thành công.", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 // tự động đóng thông báo sau 3 giây
-                Timer timer = new Timer(3000, new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        JOptionPane.getRootFrame().dispose();
-                    }
+                Timer timer = new Timer(3000, (ActionEvent e) -> {
+                    JOptionPane.getRootFrame().dispose();
                 });
                 timer.setRepeats(false);
                 timer.start();

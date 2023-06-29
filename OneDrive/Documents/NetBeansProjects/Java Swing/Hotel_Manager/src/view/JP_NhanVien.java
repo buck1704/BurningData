@@ -15,11 +15,12 @@ import javax.swing.table.TableModel;
 import model.tbl_NhanVien;
 import controller.QuanLyKhachSanController;
 import java.io.IOException;
+import javax.swing.DefaultComboBoxModel;
 import model.tbl_ChucVu;
 
 public final class JP_NhanVien extends javax.swing.JPanel {
 
-    DefaultTableModel model;
+    DefaultTableModel model;//DefaultTableModel là một lớp trong Java Swing được sử dụng để quản lý dữ liệu cho một JTable (bảng hiển thị dữ liệu).
     List<tbl_NhanVien> list = new ArrayList<>();
     private static boolean ktThem;
     private static String macu;
@@ -31,22 +32,25 @@ public final class JP_NhanVien extends javax.swing.JPanel {
         LoadDataArrayListToTable();
         LoadComBoBox();
         timkiem = "";
+        KhoaMo(false);
     }
 
     public void LoadDataArrayListToTable() {
-        list = QuanLyController.LoadDataToArrayNhanVien(timkiem);
+        list = QuanLyController.LoadDataToArrayNhanVien(timkiem);//lấy danh sách các đối tuượng 
         model = (DefaultTableModel) tb_nhanvien.getModel();
-        model.setRowCount(0);
-        for (tbl_NhanVien nv : list) {
+        model.setRowCount(0);//thiết lập số hàng của bảng là 0
+        for (tbl_NhanVien nv : list) { //để lặp qua từng đối tượng tbl_NhanVien trong danh sách list.
             model.addRow(new Object[]{nv.getManv(), nv.getTennv(), nv.getMacv(), nv.getGioitinh(), nv.getNgaysinh(), nv.getSdt(), nv.getDiachi(), nv.getTendn(), nv.getPasswword()});
         }
        
     }
-
+    private DefaultComboBoxModel<String> comboBoxModel;
     public void LoadComBoBox() throws IOException {
-        List<tbl_ChucVu> chucvu = QuanLyController.ChucVu();
-        for (tbl_ChucVu o : chucvu) {
-            cbmacv.addItem(o.getMaChucVu());
+         comboBoxModel = new DefaultComboBoxModel<>();
+         cbmacv.setModel(comboBoxModel);
+         List<tbl_ChucVu> chucvu = QuanLyController.ChucVu();
+         for (tbl_ChucVu o : chucvu) {
+            comboBoxModel.addElement(o.getMaChucVu() +"-"+o.getTenChucVu() ); 
         }
     }
 
@@ -66,7 +70,7 @@ public final class JP_NhanVien extends javax.swing.JPanel {
         bt_xoa.setEnabled(!b);
         bt_ghi.setEnabled(b);
         bt_khong.setEnabled(b);
-       
+       bt_lammoi.setEnabled(b);
     }
 
     public void refresh(boolean b) {
@@ -110,6 +114,7 @@ public final class JP_NhanVien extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         txttimkiem = new javax.swing.JTextField();
@@ -228,6 +233,7 @@ public final class JP_NhanVien extends javax.swing.JPanel {
         txtdiachi.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
 
         rbnam.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(rbnam);
         rbnam.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         rbnam.setText("Nam");
         rbnam.addActionListener(new java.awt.event.ActionListener() {
@@ -237,9 +243,11 @@ public final class JP_NhanVien extends javax.swing.JPanel {
         });
 
         rbnu.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(rbnu);
         rbnu.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         rbnu.setText("Nữ");
 
+        cbmacv.setBackground(new java.awt.Color(255, 255, 255));
         cbmacv.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cbmacv.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -544,15 +552,17 @@ public final class JP_NhanVien extends javax.swing.JPanel {
             rbnu.setSelected(true);
             rbnam.setSelected(false);
         }
-        int i = 0;
-        while (true) {
-            String machucvu = cbmacv.getItemAt(i);
-            if (machucvu.equalsIgnoreCase(macv)) {
-                cbmacv.setSelectedIndex(i);
-                break;
-            }
-            i++;
-
+        
+        int itemCount = comboBoxModel.getSize();
+        for (int i = 0; i < itemCount; i++) {
+        String selectedValue = comboBoxModel.getElementAt(i);
+        String[] values = selectedValue.split("-");
+        String mact = values[0];
+        
+        if (mact.equalsIgnoreCase(macv)) {
+            comboBoxModel.setSelectedItem(mact);
+            break;
+        }
         }
     }//GEN-LAST:event_tb_nhanvienMouseClicked
 
@@ -619,9 +629,9 @@ public final class JP_NhanVien extends javax.swing.JPanel {
         macv = (String) cbmacv.getSelectedItem();
         String gt;
         if (rbnam.isSelected()) {
-            gt = "0";
-        } else {
             gt = "1";
+        } else {
+            gt = "0";
         }
         sdt = txtsdt.getText();
 
@@ -651,7 +661,7 @@ public final class JP_NhanVien extends javax.swing.JPanel {
 
     private void bt_lammoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_lammoiActionPerformed
         // TODO add your handling code here:
-         refresh(true);
+         XoaTrang();
     }//GEN-LAST:event_bt_lammoiActionPerformed
 
     private void txttennvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttennvActionPerformed
@@ -660,12 +670,18 @@ public final class JP_NhanVien extends javax.swing.JPanel {
 
     private void cbmacvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbmacvMouseClicked
         // TODO add your handling code here:
-             
+    
+
     }//GEN-LAST:event_cbmacvMouseClicked
 
     private void cbmacvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmacvActionPerformed
-        // TODO add your handling code here:
-         
+            // TODO add your handling code here:
+            String selectedValue = (String) comboBoxModel.getSelectedItem(); // Lấy giá trị
+            String[] values = selectedValue.split("-"); // Chia chuỗi
+            String mact = values[0];
+            
+            comboBoxModel.setSelectedItem(mact);
+       
     }//GEN-LAST:event_cbmacvActionPerformed
 
 
@@ -676,6 +692,7 @@ public final class JP_NhanVien extends javax.swing.JPanel {
     private javax.swing.JButton bt_sua;
     private javax.swing.JButton bt_them;
     private javax.swing.JButton bt_xoa;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbmacv;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

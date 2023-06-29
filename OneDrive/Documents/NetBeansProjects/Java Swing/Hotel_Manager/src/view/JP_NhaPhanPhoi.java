@@ -34,6 +34,12 @@ public final class JP_NhaPhanPhoi extends javax.swing.JPanel {
     }
 
     public void KhoaMo(boolean b) {
+        txtmacty.setEditable(b);
+        txttencty.setEditable(b);
+        txtsdt.setEditable(b);
+        txtemail.setEditable(b);
+        txtdiachi.setEditable(b);
+        txtsdt.setEditable(b);
         bt_them.setEnabled(!b);
         bt_sua.setEnabled(!b);
         bt_xoa.setEnabled(!b);
